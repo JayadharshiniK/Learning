@@ -7,7 +7,7 @@ Install
 
 Clone( moving git hub repository to local folders )
 -----
-1. Open command from Command Prompt ( Windows search bar)
+1. Open command from Command Prompt or GIT CMD( Windows search bar)
 2. Enter command: "D:"
 3. Enter command :"git clone https://github.com/JayadharshiniK/Learning.git"
 3. Go to the directory where  you want to save the file
