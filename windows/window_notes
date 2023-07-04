@@ -5,7 +5,7 @@ cd <FOLDER_NAME>
 //How to go to other drive
 <DRIVE_NAME>:
 
-dir - to show all files(git command for windows)
+dir - to show all files (git command for windows)
 
 //To list all the files in a folder
 ls
