@@ -6,3 +6,9 @@ cd <FOLDER_NAME>
 <DRIVE_NAME>:
 
 dir - to show all files
+
+//To list all the files in a folder
+ls
+
+//To see the present directory
+pwd
