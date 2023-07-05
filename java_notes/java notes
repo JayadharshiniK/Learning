@@ -1,0 +1,29 @@
+to install
+----------
+install java version 11 windows 64 bit.exe
+run the exe file
+
+to check the version
+--------------------
+open gitbash
+enter the command--- java -version
+then press on enter
+installation finished
+
+Create a new project in java
+----------------------------
+open new project from file menu
+rename the project
+change the file location to your 'learning github' folder
+press on 'create' to create a new project
+
+tip1:
+----
+The Java class name must be always joined
+The first letter of its word must be capitalized
+eg. FirstProgram
+
+Shortcuts:
+---------
+psvm- to create a new method(starting of a program)
+sout-to print in console
