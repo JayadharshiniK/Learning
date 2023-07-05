@@ -112,5 +112,162 @@ color: pink;
 }
 --------------------------------------------------------------------------------
 PRACTICE SET 1
+tip1: /* _______*/ - it is used for the comment purpose, not for coding
+tip2: for multiple selection, h1, h2, h3 can be used
+tip3: the last given command is followed in the coding
+tip4: parent tag(the first one) and child tag (tag present inside that)
+      child tag follows the property given for the parent tag
+--------------------------------------------------------------------------------
+TEXT PROPERTIES
+---------------
+text-align: left/right/center
+ccs3: start and end for different languages writing style
 
-1.
+text-decoration: underline/overline/ line-through
+refer mdn website for css styles documentation
+
+font-weight: normal/bold/light/bolder
+font-weight: 100-900
+
+font-family: arial, roboto (font style)
+tip1: font1, font2---priority in descending order
+
+unit in css:
+absolute: pixels(px)
+96px=1 inch=2.54 cm
+eg. font-size:16px (default);
+
+line-height: the space taken by a single line
+
+text-transform: uppercase/lowercase/capitalize/none
+--------------------------------------------------------------------------------
+PRACTICE SET 2
+
+html;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>The school</h1>
+  <div id="outer">
+    Outside</div>
+    <div id="inner">
+      Inside
+    </div>
+  </div>
+</body>
+</html>
+
+css;
+h1 {
+    text-align: left;
+    text-decoration:crimson wavy underline;
+    text-transform: capitalize;
+    color:blue
+}
+
+#outer{
+    font-size: 25px;
+}
+#inner{
+    font-size: 10px;
+}
+
+--------------------------------------------------------------------------------
+LEVEL 2
+-------
+BOX MODEL IN css
+height: area occupied by the content in vertically
+it sets the content area height of the elements
+eg. div{
+height: 50px;
+}
+
+width: area occupied by the content in horizontally
+it sets the content area width of the element
+eg. div{
+width; 50px;
+}
+
+border: enclosing line for boundaries
+used to set an element's border
+border-width:2px
+border-style: solid/dotted/dashed
+border-color: black;
+
+*short cut*---border: 2px solid black;
+border property: width style color
+
+border radius: used too round the corners of an element's outer border edge
+eg. border-radius: 10 px;
+ border-radius: 50%;
+
+padding: spaces between content and padding
+padding-left: 25px
+padding-right: 25 px
+padding-top
+padding-bottom
+
+margin: space between two boxes
+--------------------------------------------------------------------------------
+PRACTICE SET 3
+creating navigational bar for amazon
+tip1: before starting developing any designs, use
+*{
+padding: 0;
+margin: 0;
+}
+This helps in removing any extra margins readily present in some elements.
+
+html;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="navbar">
+    <a id="logo" href="#">amazon.in</a>
+    <a href="#">Account</a>
+    <a href="#">My Cart</a>
+    <a href="#">Contact Us</a>
+    <input placeholder="Search amazon.in">
+    <button>Search</button>
+</div>
+</body>
+</html>
+
+css;
+*{
+    padding:0;
+    margin: 0;
+    color: white;
+}
+
+#navbar{
+    height: 60px;
+    background-color: #0f1111;
+}
+
+#logo{
+    font-size: 25px;
+    color: #f08804
+
+}
+
+button{
+    background-color: #f08804;
+}
+
+a{
+    margin-right: 200px;
+}
+--------------------------------------------------------------------------------
