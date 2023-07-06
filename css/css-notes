@@ -133,6 +133,7 @@ font-family: arial, roboto (font style)
 tip1: font1, font2---priority in descending order
 
 unit in css:
+------------
 absolute: pixels(px)
 96px=1 inch=2.54 cm
 eg. font-size:16px (default);
@@ -271,3 +272,101 @@ a{
     margin-right: 200px;
 }
 --------------------------------------------------------------------------------
+
+DISPLAY PROPERTY
+----------------
+in html, there are two types of elements:
+block: occupies 100% width(div,h1)--starts from next line by default
+inline: occupies only required width(button, input, anchor tag)
+
+display: inline / block / inline-block / none
+inline:-takes only the space required by the element (no margin/padding)
+block:-takes full space available in width
+inline-block:-similar to inline but we can set margin and padding
+none: to remove the element from document flow/ to make it disappear
+
+VISIBLITY PROPERTY
+------------------
+visibilty: hidden; ( to make elements invisible)
+NOTE:--- When visibility is set to none(hidden), space for the element is reserved.
+But for display set to none, no space is reserved or blocked for the element.
+
+ALPHA CHANNEL
+-------------
+opacity (0 to1)------can be used to set visibilty
+RGBA:-
+color: rgba(255, 0, 0, 0.5)----mild red with partial opacity
+color: rgba(255, 0, 0, 1)-----red with full appearance
+--------------------------------------------------------------------------------
+
+PRACTICE SET 4
+--------------
+TIP1: use google searched codes for incorporating symbols in html
+tip2: bg color can be given from the inline styling itself
+--------------------------------------------------------------------------------
+
+LEVEL 3
+-------
+UNITS IN CSS
+------------
+absolute units: px, cm, mm, and inch (fixed)
+
+relative units:--
+----------------
+
+percentage (%):-
+it is often used to define a size as relative to an element's parent object
+eg. <div>
+      <div></div>
+    </div>
+
+    div1- parent
+    div2-child
+width: 33%; ----- div1(100%) and div2(33%)
+
+em:-font size of the parent
+2em= two times of the parent's font size
+
+rem(root em)-font size of the root element
+(depends upon the font size of the root element or basic element)
+
+vh--relative to 1% viewport(browser)height
+vw--relative to 1% viewport width
+eg. height: 1vh;----it becomes the one percent of viewport height
+    height: 50vh;---it becomes the 50% of viewport height
+
+POSITION PROPERTY
+-----------------
+the position css property sets how an element is positioned in a document
+
+position: static / relative / absolute / fixed;
+-----------------------------------------------
+tip: #box---= <div id="box"></div>
+
+static:-default position (cannot be changed) any position have no effect
+
+relative:-element is relative to itself
+(the top, right, bottom, left and z-index will work)
+
+absolute:-positioned relative to its closest positioned ancestor
+
+fixed:-used top create navbars
+
+positioned relative to browser; always stays in the same position
+
+sticky:-position based on user's scroll position
+becomes fixed  when the scroller reaches the correct position
+
+z-index: it decides the stack level(layer) of elements
+overlapping elements with a larger z-index cover those with a smaller one
+comes related to the z-axis in the math axis plane(3d)
+z-index: auto(0)
+z-index: 1/2...
+z-index: -1/-2...
+
+BACKGROUND IMAGE
+----------------
+used to set an image as background
+background-image: url("image.jpeg");
+
+background-size: cover / contain / auto

@@ -27,3 +27,26 @@ Shortcuts:
 ---------
 psvm- to create a new method(starting of a program)
 sout-to print in console
+--------------------------------------------------------------------------------
+BASIC TERMS IN JAVA
+-------------------
+1. Data structures-the way in which companies store their customer's data
+
+2. Algorithm- operations used steps followed
+
+3. Functions of JAVA- used to perform any task
+
+4. //- for comments, not for coding purposes
+
+5./**/-for writing it in different lines
+/*
+*here's our first program
+*/
+6.;- end of a line
+
+7. exit code=0 ---no error in the code
+   exit code=1----error in the code
+
+8.'sout'- to easily get the starting code---System.out.println();
+
+9. variables -used to store the data for a temporary purpose in JAVA
