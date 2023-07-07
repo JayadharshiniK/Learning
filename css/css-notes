@@ -370,3 +370,95 @@ used to set an image as background
 background-image: url("image.jpeg");
 
 background-size: cover / contain / auto
+cover: no empty space in the container of image, completely fits in
+contain: fit image completely (image becomes small to fit in the container)
+auto : by default how much the image is able to get in the container
+--------------------------------------------------------------------------------
+PRACTICE SET 5
+--------------------------------------------------------------------------------
+
+LEVEL 4
+-------
+
+Flexbox (flexible box layout)
+-----------------------------
+It is a one-dimensional layout method for arranging items in rows or columns.
+
+flex container----display: flex;
+flex item----elements present in the flex container
+main axis---horizontal direction
+cross axis---vertical direction
+
+Flexbox direction
+-----------------
+It sets how flex items are placed in the flex container
+along which axis and direction
+
+flexbox-direction: row; (default)---main-axis: left to right
+flexbox-direction: row-reverse;----main axis: right to left
+flexbox-direction: column;-----main-axis: top to bottom
+flexbox-direction: column-reverse;---main-axis: bottom to top
+
+tip1: direction is such a property used for the whole container and not for the individual items
+tip2: it always fits inside the container, till the space of content is not disturbed
+
+FLEX PROPERTIES:----for flex container
+---------------
+justify-content: alignment along the main axis
+flex start / flex-end / centre / space-evenly / space-between / space-around;
+#flex-start: start of the main axis
+#flex-end: end of the main axis
+#centre: aligns along the centre of main axis
+#space-around: space given equally...the margin space is half of the space given inbetween
+#space-betwwen: no extra spaces in the margins
+#space-evenly: evenly spread of spaces (both margins and inbetween)
+
+flex-wrap: nowrap / wrap / wrap-reverse
+
+align-items : alignment along the cross axis
+
+align-content : alignment of space between and around the content area
+
+FLEX PROPERIIES:-----for flex items
+----------------------------------
+align-self: alignment of individual along the cross axis
+
+flex-grow: how much a flex item will grow relative to the rest of the flex items if space is available
+
+flex-shrink: how much a flex item will shrink relative to the rest of the flex items if space is available
+----------------------------------------------------------------------------------------------------------
+PRACTICE SET 6
+--------------
+use flexbox to center one dix inside another div.
+--
+display: flex;
+justify-content: center;
+align-items: center;
+
+tip# priority of align-self is more than that of align-items
+--------------------------------------------------------------------------------
+MEDIA QUERIES
+-------------
+helps create a responsive website
+for changing color, size and properties for various screen size
+
+@media(width: 600px){
+div{
+background-color: red
+}
+}
+
+@media(min-width: 600px){
+div{
+background-color: red;
+}
+}
+
+@media(min-width: 200px) and (max-width:300px){
+div{
+background-color: red;
+}
+}
+--------------------------------------------------------------------------------
+LEVEL 5----ADVANCED CSS
+-------
