@@ -462,3 +462,160 @@ background-color: red;
 --------------------------------------------------------------------------------
 LEVEL 5----ADVANCED CSS
 -------
+
+TRANSITIONS property
+--------------------
+Transitions enable you to define the transition between two states ( hovered, active) of an element.
+
+transition property: property you want to transition (font-size, width,)
+transition-duration: 2s / 4ms
+transition-timing-function: ease-in / ease-out / linear / steps
+transition-delay: 2s / 4ms
+
+setting a pseudoclass: defines different state of the element
+
+TRANSITION SHORTHAND:
+property name--duration--timing function--delay
+
+transition: font-size 2s ease-in-out 0.2s;
+
+CSS transform
+-------------
+Used to apply 2D and 3D transformations to an element
+
+ROTATE:
+-------
+transform: rotate(45deg);
+rotate: 45deg;
+rotateX: 45deg;
+rotateY: 45deg;
+rotateZ: 45deg;
+
+tip#: rotate: x 45deg;------not visible as it gets flat and no height is available
+ rotate: y 45deg;------not visible as it gets flat and no width is available
+  rotate: z 45deg;------visible as it gets rotated on the z-axis only
+
+SCALE
+-----
+
+transform: scale(2);-----x,y
+transform: scale(1,2);------x=1, y=2
+transorm-scaleX(2);-----ONLY ALONG X AXIS
+
+
+TRANSLATE
+---------
+used to move the position of the element from the origin along its axis
+
+transform: translate(20px);-----translate in both axis
+transform: translate(20px,50px);
+
+transform: translateX(20px);-----right side
+transform: translateX(-20px);-----left side
+
+SKEW
+----
+It's a mixture of different effects
+Draging from both the corners of the element
+transform: skew (30deg);
+
+ANIMATION
+---------
+To animate CSS elements
+
+@keyframe myName{
+from{font-size: 20px;}
+to{font-size: 40px;}
+}
+
+----keyframe---template / blueprint / layout
+--- myName----name of my animation
+
+ANIMATION properties
+--------------------
+animation-name
+animation-duration
+animation-timing-function
+animation-delay
+animation-iteration-count = how many times my animation has to apply
+
+animation-direction
+normal=from -to (plays forwards each cycle)
+reverse=to-from (plays backward each cycle)
+alternate= reverses direction each cycle
+
+Animation SHORTHAND
+-------------------
+animation: myName 2s linear 3s infinite normal
+
+{name-duration-timing function-delay-iteration count-direction}
+
+% in Animation
+--------------
+to make changes in the middle of animation process i.e. from(0%)- to(100%)
+
+@keyframe myName{
+0% {font-sixe:20px;}
+50% {font-size:30px;}
+100% {font-size:40px;}
+}
+--------------------------------------------------------------------------------
+PRACTICE SET-8
+Create a simple loader
+
+#html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="loader"></div>
+</body>
+</html>
+
+#CSS
+.loader{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    border: 20px solid grey;
+    border-top: 20px solid black;
+    animation: spinAnimate 1s ease-in 0s infinite normal;
+}
+
+@keyframes spinAnimate {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+}
+--------------------------------------------------------------------------------
+
+PROJECT- AMAZON.COM WEBPAGE
+--------------------------
+STEPS TO CREATE AMAZON WEB PAGE:
+1. Create a hmtl and css file under a project folder in vscode
+2. Download and bring the required images and logo to the project folder
+3. Link the cdn font awesome tag link to get access to the icons available in the web.
+
+'cdn-content delivery network
+(connects our system to the nearest data server to get any video/image/icon)''
+
+4. Apply universal selector for common properties:
+margin-font-family-border
+border-box: The border has to apply within the box height and width itself
+5. Create navbar:
+Include logo
+tip#: apply your font size in rem for a responsive website
+tip#: separate the elements of the navbar and set the properties.
+tip#: We can use combination of selectors
+eg. .nav-cart i-----for the icon present in the 'nav-cart' Class
+
+tip#: For inline styling use double quotes outside and single inside if url tag used.
+tip#:Don't write the same code twice inside write it in the parent section itself
