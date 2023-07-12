@@ -38,7 +38,7 @@ BASIC TERMS IN JAVA
 
 4. //- for comments, not for coding purposes
 
-5./**/-for writing it in different lines
+5./**/-for writing it in different lines comments
 /*
 *here's our first program
 */
@@ -50,3 +50,110 @@ BASIC TERMS IN JAVA
 8.'sout'- to easily get the starting code---System.out.println();
 
 9. variables -used to store the data for a temporary purpose in JAVA
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+JAVA LEARNING- 'W3 SCHOOLS'
+--------------------------
+
+JAVA-INTRO
+
+*Every JAVA program has a class name which must match the filename;
+
+*Every program must contain the main() method;
+
+*System.out.println("Hello world");---for an output
+
+*When you're working with text, it must be wrapped inside double quotes;
+
+*Unlike text, we don't put numbers inside double quotes
+eg. System.out.println(3);
+
+*Performs mathematical calculations
+eg. System.out.println(7*9);
+
+*basic syntax:
+public class Main{
+ public static void main(String[] args){
+  System.out.println("Hello world");
+}
+}
+
+*//-single-line comments start with two forward slashes
+
+*Multi-line comments start with /* and ends with */
+
+JAVA variables
+--------------
+*Variables are used for storing data values
+
+*string- storing text (hello)
+int- storing integers (123 or -123)
+float- stores floating point numbers with decimal (19.99 or -19.99)
+char- stores single charaters such as 'a' or 'B'. Char values are surrounded by single quotes
+boolean- stores values with two states- true or false
+
+int myNum = 5;
+float myFloatNum = 5.99f;
+char myLetter = 'D';
+boolean myBool = true;
+String myText = "Hello";
+
+*DECLARING(creating) VARIABLES-
+To create a variable, you must specify the type and assign it a value:
+    type variableName = value;
+//type = int/string/char/float (decides how much space to be allocated in the memory for the input )
+//variableName = any name we assign to reserve a space in the system memory for our input
+equal sign= used to assign values to the variables
+
+eg. Create a variable called 'name' of the type String and assign it the value "John"
+
+String name = "John";
+System.out.println(name);
+
+
+Create a variable called 'myNum' of the type int and assign it the value 15
+
+int myNum = 15;
+System.out.println(myNum);
+
+In other way:
+int myNum;
+myNum = 15;
+System.out.println(myNum);
+
+*use the keyword 'final' for assigning unchangeable and read-only values
+final int myNum = 15;
+
+JAVA Print VARIABLES
+--------------------
+
+Display variables
+-----------------
+*The println() method is often used to display variables
+
+eg.
+String name = "John";
+System.out.println("Hello " + name);
+
+combining strings (add a variable to another variable):
+
+eg.
+String firstName = "John ";
+String lastName = "Doe";
+String fullName = firstName + lastName;
+System.out.println(fullName);
+
+
+For numeric values:
+eg.
+int x = 5;
+int y = 6;
+System.out.println(x + y);
+
+Declare many Variables
+----------------------
+To declare more than one variable of the same type, you can use a comma-separated list:
+eg.
+int x = 5, y = 6, z = 50;
+System.out.println(x + y + z);

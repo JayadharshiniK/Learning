@@ -1,0 +1,128 @@
+Building a website with adv. CSS
+--------------------------------
+PROJECT: NATOURS
+
+1. The best way to perform a basic reset using the universal selector
+2. How to set project-wide font definitions
+3. How to clip parts of elements using 'clip-path'
+
+Make the initial setup for css coding-images, linking required cdn
+Write a basic reset for the webpage in css code before starting
+
+tip1: box sizing:---borders and paddings are no longer added to the total width or total height
+tip2: add the font family in body part for a good practice
+
+95vh----everytime the height must be 955 of the viewport height
+linear-gradient----to make gradients across the screen
+R: clippy-css clip path maker
+
+
+4. The easiest way to center anything with the transform, top and left properties
+
+adding logo and text to the header
+alt tag(attribute tag)--for seo optimation &
+                      --if the image fails to load there then the text appears for the user
+
+tip3: span element is used to style some text differently
+
+5. How to create CSS animations using @keyframes and the animation property
+text-entrance animations
+
+to fix shaky
+backface-visibility: hidden;----determines the hiding of the back part of the elements
+also helps to fix the shaky part of the element while animation
+
+tip4: ctrl+d=selects the multiple element of same property
+
+6.What are pseudo-elements and pseudo-classes are;
+How and why to use the ::after pseudo-element;
+How to create a creative hover animation effect using the transition property
+
+'PSEUDOCLASSES' are special state of a selector/classes
+used to style elements under special conditions
+eg. .class: hover
+    .class: link
+    .class: active
+    .class: visited---it appears after once the user and clicked (eg. links become blue to purple once clicked)
+
+tip5: padding:15px 40px;---the first value is for top & bottom and the second value is for left & right
+padding:15px;---for all
+padding  : 15px 20px 30px 40px;---(top, right, bottom, left)
+
+button animation---for a real 3d effect
+hover--transform: translateY(-3)
+active--transform: translateY(-1)
+
+2 types of animation---transition & @keyframes
+
+box-shadow: (X Y BLUR RGBA);
+
+after pseudo-element: to add an element that looks exactly like the button that we already have but we put it behind the button
+It is often used to add cosmetic content to an element with the content property.
+It is inline by default.
+
+pseudo-element behaves like a child element
+
+CODING UP FOR button COMING UP effect
+0% {
+transform: translateY(30px)
+}
+100%{
+transform: translateY(0px)
+}
+
+animation-fill-mode: backwards;
+--it will automatically apply the styles of 0% before the animation starts
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+HOW CSS WORKS: A LOOK BEHIND THE SCENES
+---------------------------------------
+
+THREE PILLARS OF WRITING GOOD HTML AND CSS
+------------------------------------------
+RESPONSIVE DESIGN:-Building one website that works across all screen sizes on all devices
+
+1. Fluid layouts:
+2. Media queries:
+3. Responsive images:
+4. Correct units:
+5. Desktop-first vs mobile-first strategy:
+
+
+MAINTAINABLE AND SCALABLE CODE:-
+Clean
+Easy-to-understand
+Growth
+Reusable
+How to organize files
+How to name classes
+How to structure HTML
+
+
+WEB PERFORMANCE:-Making a website or app more performant means to make it faster
+and to make it smaller in size, so that the user has to download less data.
+
+Less code
+Less HTTP requests
+Compress codes
+Use a CSS preprocessor like Saas
+Less images
+Compress Images
+
+
+HOW CSS WORKS: A LOOK BEHIND THE SCENES(OVERVIEW)
+-------------------------------------------------
+What happens to CSS when we load up a webpage?
+
+1.Load HTML
+2.Parse HTML-To decode the html code line by line and loads CSS also
+3.The browser builds up the DOM(Document Object Model)-describes the entire web document like a family tree
+DOM- stores all the decoded html code
+4.Parsing of CSS (complicated)
+//conflicting CSS declarations are resolved through a process known as cascade
+//to process final CSS values (eg. converting %values-px)
+5.The CSS is also stored in a tree-like structure called the CSS object model, similar to the DOM
+6.HTML and CSS parsed and stored, these together form the so-called Render Tree
+7. We have everything for website rendering: the visual formatting model
+//visual formatting model calculates and uses a bunch of stuff like box model, floats and positioning
+8.Finally, the rendered website is rendered or painted to the screen and the process is finished.

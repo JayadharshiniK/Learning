@@ -534,8 +534,8 @@ to{font-size: 40px;}
 ANIMATION properties
 --------------------
 animation-name
-animation-duration
-animation-timing-function
+animation-duration--specifies the length of time of the animation sequence
+animation-timing-function--sets the pace of the animation
 animation-delay
 animation-iteration-count = how many times my animation has to apply
 
@@ -619,3 +619,8 @@ eg. .nav-cart i-----for the icon present in the 'nav-cart' Class
 
 tip#: For inline styling use double quotes outside and single inside if url tag used.
 tip#:Don't write the same code twice inside write it in the parent section itself
+
+6. Create a content section
+tip#:style for 1 box and copy the code for all similar box you needed
+
+7. Create bottom panels--about three sections according to the given TEXT
