@@ -29,8 +29,8 @@ tip3: span element is used to style some text differently
 text-entrance animations
 
 to fix shaky
-backface-visibility: hidden;----determines the hiding of the back part of the elements
-also helps to fix the shaky part of the element while animation
+backface-visibility: hidden;----determines the hiding of the back part of the
+elements also helps to fix the shaky part of the element while animation
 
 tip4: ctrl+d=selects the multiple element of same property
 
@@ -43,9 +43,11 @@ used to style elements under special conditions
 eg. .class: hover
     .class: link
     .class: active
-    .class: visited---it appears after once the user and clicked (eg. links become blue to purple once clicked)
+    .class: visited---it appears after once the user and clicked (eg. links
+    become blue to purple once clicked)
 
-tip5: padding:15px 40px;---the first value is for top & bottom and the second value is for left & right
+tip5: padding:15px 40px;---the first value is for top & bottom and the second
+value is for left & right
 padding:15px;---for all
 padding  : 15px 20px 30px 40px;---(top, right, bottom, left)
 
@@ -57,7 +59,8 @@ active--transform: translateY(-1)
 
 box-shadow: (X Y BLUR RGBA);
 
-after pseudo-element: to add an element that looks exactly like the button that we already have but we put it behind the button
+after pseudo-element: to add an element that looks exactly like the button that
+we already have but we put it behind the button
 It is often used to add cosmetic content to an element with the content property.
 It is inline by default.
 
@@ -116,7 +119,8 @@ What happens to CSS when we load up a webpage?
 
 1.Load HTML
 2.Parse HTML-To decode the html code line by line and loads CSS also
-3.The browser builds up the DOM(Document Object Model)-describes the entire web document like a family tree
+3.The browser builds up the DOM(Document Object Model)-describes the entire web
+document like a family tree
 DOM- stores all the decoded html code
 4.Parsing of CSS (complicated)
 //conflicting CSS declarations are resolved through a process known as cascade
@@ -126,3 +130,393 @@ DOM- stores all the decoded html code
 7. We have everything for website rendering: the visual formatting model
 //visual formatting model calculates and uses a bunch of stuff like box model, floats and positioning
 8.Finally, the rendered website is rendered or painted to the screen and the process is finished.
+
+
+HOW IS CSS PARSED,
+PART 1; THE CASCADE AND SPECIFICTY
+-----------------------------------------------------
+
+Eg.
+.my-class {
+color: blue;
+text-align: center
+font-size: 20px
+}
+
+//.my-class---selector
+// font-size --property
+//20px--declared value
+
+
+STEP1: To resolve conflicting CSS declarations--(cascade)
+*CASCADE: Process of combining different stylesheets and resolving conflicts
+between different CSS rules and declarations, when more than one rule applies to
+a certain element.
+
+Different CSS:
+//author declarations(developer CSS)
+//user declarations(user CSS)- eg. when user changes the default font size
+//default browser declarations (user-agent CSS)-anchor tags get blue underlined
+
+Importance > SPECIFICTY > source order
+
+Based on Importance:
+1. User '!important' declarations
+2. Author '!important' declarations
+3. Author declarations
+4. User declarations
+5. Default browser declarations
+
+//If same importance:
+Second factor considered:- SPECIFICTY of the property given to the elements
+1. Inline styles
+2. IDs
+3. Classes, pseudo-classes, attribute
+4. Elements, pseudo-elements
+
+eg.
+ .button{
+  font-size: 20px;                    ----(0,0,1,0)
+  color: white;
+  background-color: blue;
+ }
+
+nav#nav div.pull-right .button {      ----(0,1,2,2)
+ background-color: green
+}
+
+a {
+ background-color: purple;            ----(0,0,0,1)
+}
+
+#nav a.button:hover {
+ background-color:yellow;             ----(0,1,2,1)
+}
+
+*According to the specificity comparison given above:
+the second declared wins and becomes the cascaded value
+
+//if same specificity:
+source border:
+The 'last declaration' in the code will override all other declarations and will be applied.
+--------------------------------------------------------------------------------
+* CSS declarations marked with '!important' have the highest priority;
+*But, only use '!important' as a last resource. It's better to use correct specifications- more maintainable code
+*Inline styles will always have priority over styles in external stylesheets;
+*A selector that contains 1 ID is more specific than one with 1000 classes;
+*A selector that contains 1 class is more specific than one with 1000 elements;
+*The universal selector* has no specificity value (0,0,0,0);
+*Rely more on specificity than on the order of selectors;
+
+RESOURCE: CodePen for web development: (html, css and js in single page)
+
+
+STEP2: To process the final CSS values
+
+How CSS values are processed?--6 steps:
+--------------------------------------
+
+1. Declared value (author declarations):
+Analyzing the declaring value
+eg. width:66%, 140px
+
+2. Cascaded value (After the cascade):
+Selected value according to property
+eg. 66%
+
+3. Specified Value (Defaulting, if there is no cascaded value):
+Applying of default CSS initial value for the property, if not any declared value by the author
+//different properties have different initial Values
+
+4. Computed value (Converting relative values to absolute value):
+Values of relative units are converted into px
+eg. vh--real value
+1rem--24px {1.5*16px (Default)}
+
+5. Used value (final calculations, based on layout):
+calculation using CSS engine for the remaining units
+eg. %values to px units
+66% of 240px (parent element's value) = 184.4 px
+
+6. Actual value(browser and device restrictions-rounded off to whole numbers):
+Actual value rounded of as computer cannot show the pixels in decimal
+eg. 184.4--185px
+
+PART2: VALUE PROCESSING
+-----------------------
+How units are converted from relative units to absolute(px):
+-----------------------------------------------------------
+//em--emphermeral units:-em values are relative to the font-size of the nearest parent element
+//rem-relative em: rem values are relative to the root font-size of the html (16px)
+
+Example chart for conversion of different units:
+
+%(fonts):  150%      ---      x% of parent's         ---  24px
+                         computed font-size
+
+%(lengths): 10%      ---      x% of parent's         ---  100px
+                          computed width(1000px)
+
+em(fonts):  3rem     ---      x of parent's          ---  72px (3*24)
+                         computed font-size
+
+em(lengths): 2em     --- x of current element's      ---  48px
+                         computed font-size
+
+rem       : 10rem    ---      x of root              ---  160px
+                         computed font-size
+
+vh        :  90vh    ---       x of 1% of            ---  90% of the
+                            viewport height          current viewport height
+
+vw        :  80vw     ---      x of 1% of             ---  80% of the
+                            viewport width            current viewport width
+
+
+PART3: INHERTITANCE IN CSS
+--------------------------
+*INHERITANCE is a way of propagating property values from the parent elements to their children.
+
+*Every CSS property must have a value.
+
+*If there is no cascaded value, then the property can be inherited.
+
+*Some properties can be inherited & others are not.
+Properties related to text are inherited: font-family, font-size, color, etc.
+Other properties such as margins and padding are not inherited
+
+*The computed value of a property is what gets inherited, not the declared value
+The value that gets inherited is not simply the 150%, but the computed value.
+eg. 150% of 20px (font-size) = 30px
+
+*Inheritance of a property only works if no one declares a value for that property;
+
+*The 'inherit' keyword forces inheritance on a certain property;
+
+*The "initial" keyword resets a property to its initial value;
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+How and why to use rem units on our projects:
+1. Change all the px units into rem (relative units)
+//helps to change all the measurements on our page with one simple setting
+//to make it more Responsive
+tip: setting the html font-size to 10 px helps in reducing the calculations;
+tip: use only dot before decimals, we don't need any zero
+
+A great workflow for converting px to rem;
+
+Advanced property for responsive website: A good practice one
+-------------------------------------------------------------
+PROBLEM:
+*It is a bad practice to set the html font-size to be in px also
+*The problem is that by doing so we actually override the browser font-size setting
+that the user can manually change in the settings, for eg. when they have a bad sight.
+*So, if we set our font-size to 10px, then we remove the ability for these people
+to see our website properly, because they no longer change the default font size.
+*And even if they change, the root font size will not be affected by that anymore.
+
+SOLUTION:
+*Setting a overall font size to percentage, which will translate to a percentage
+of the font-size given by the browser.
+*Absolute default font-size is 16px, so:
+100% = 16px (if the user changes to 18px, then the font size will be 18px)
+*But, here we want 10px as the root-font size for easy calculations
+so, here:
+10/16 *100
+=0.625*100
+=62.5%
+======
+
+*Whatever font size the user want can be calculated automatically by the browser
+and it will visible in a accurate manner as we designed.
+*In other words, we allow the user to zoom in on the page automatically, not
+only to change the font-size, but also zoom in on the page (not only zooming, but
+also increasing all of the measurements that we have on our page)
+
+//WARNING;--rems are not supported below Internet Explorer 9
+
+//Apply the box-sizing property in the body tag and force the box-sizing to be inherit
+in the universal selector, as box-sizing is not simply inherited.
+--It will automatically inherit the box-sizing property to all the elements
+
+//Update the universal reset, by adding
+*::after,
+*::before
+
+//because until then, only the real elements get the declared property, but the after
+and before pseudo-elements, don't get this behavior.
+--------------------------------------------------------------------------------
+
+WEBSITE RENDERING PHASE:
+-----------------------
+HOW CSS RENDERS A WEBSITE: THE VISUAL FORMATTING MODEL
+
+*THE VISUAL FORMATTING MODEL: Algorithm that calculates boxes and determines the
+layout of these boxes, for each element in the render tree, in order to determine
+final layout of the page.
+
+* The factors that this Algorithm takes into account are:
+
+1. Dimensions of boxes: the box model;
+//each and every element on a webpage can be seen as a rectangular box
+//each box can have a width, a height, a padding, margins and a border
+//content of the box: text, images, etc.;
+//padding: transparent area around the content, inside of the box;
+we use paddings to generate white space inside of a box
+//border: goes around the padding and the content;
+//margin: space between boxes;
+the margin is white space that's actually outside the box
+we use margins to generate white space between the boxes
+//fil area: area that gets filled with background color or background image
+includes the padding and the border, but not the margin area
+
+The Box Model: heights and widths
+Total width: right border + right padding + specified width + left padding + left border
+total height: top border + top padding + specified height + bottom padding + bottom border
+
+box-sizing: border-box;--removes the padding and the border from total height and width.
+
+2. Box type: inline, block and inline-block;
+
+1# Block-level boxes-
+*Elements formatted visually as blocks
+*100% of parent's widths
+*Vertically, one after another
+*eg:
+display: block;
+(display: flex)
+(display: list-item)
+(display: table)
+
+2# Inline boxes-
+*Content is disturbed in lines
+*Occupies only content's spaces
+*No-line breaks
+*No heights and widths
+*Paddings and margins only horizontal (left and right)
+*eg.
+display: inline;
+
+3# Inline-block boxes-
+*A mix of block and Inline
+*Occupies only content's space
+*No-line breaks
+*eg.
+display: inline-block;
+
+3. Positioning scheme: floats and positioning (relative or absolute)
+
+#1 Normal flow:- means is that the elements are simply laid out on the page in a natural order in the code
+*Default positioning scheme;
+*NOT floated;
+*NOT absolutely positioned;
+Elements laid out according to their source border
+*eg. position: relative
+
+#2 Floats:- The float property causes an element to be completely taken from the
+normal flow and shifted it to the left or right as far as possible, until it touches
+the edge of its containing box, or another floated element.
+*Element is removed from the normal flow;
+*Text and inline elements will wrap around the floated element;
+*The container will not adjust its height to the element.
+
+#3 Absolute positioning:-
+*Element is removed from the normal flow;
+*No impact on surrounding content or elements;
+*We use top, bottom, left and right to offset the element from its relatively positioned container.
+
+4. Stacking contexts;
+5. Other elements in the render tree; such as siblings or parents;
+6. Other external information such as viewport size, Dimensions of images, etc.
+-----------------------------------------------------------------------------------------------------
+
+CSS ARCHITECTURE, COMPONENTS AND BEM
+------------------------------------
+
+The think-build-architect mindset:
+---------------------------------
+*The important feature of a good CSS coding:
+1# RESPONSIVE DESIGN
+2# WEB PERFORMANCE
+3# MAINTAINABLE AND SCALABLE CODE;
+--Clean
+--modular
+--Reusable
+--ready for growth
+
+*The best mindset:
+1# THINK: Think about the layout of your webpage or web app before writing code
+Component-driven design:
+*Modular building blocks that make up interfaces;
+*Held together by the layout of the page;
+*Re-usable across a project, and between different projects;
+tip# Build a library of your components and then reuse them across projects which will speed up your development;
+*Independent, allowing us to use them anywhere on the page.
+
+2# BUILD: Build your layout in HTML and CSS with a consistent structure for naming classes
+BEM METHODOLGY
+--------------
+*BLOCK ELEMENT MODIFIER
+eg. .block__element--modifier {/* Styles */}
+
+*BLOCK: (standalone component that is meaningful on its own):
+A block represents an object in your website.
+Most common blocks on every website today are header, content, sidebar, footer, and search.
+
+*ELEMENT: (part of a block that has no standalone meaning):
+An element is a component within the block that performs a particular function.
+It should only make sense in the context of its block
+
+*MODIFIER:(a different version of a block or an element):
+A modifier is how we represent the variations of a block. eg.
+a content featured article
+a menu link
+a search field with or without icon
+
+*Functions of BEM:
+#to speed up the development process;
+#to ease the teamwork of developers by arranging CSS classes into independent modules;
+#to use BEM only with classes, and not IDs
+
+3# ARCHITECT: Create a logical architecture for your CSS with files and folders.
+The 7-1 pattern: (introduced by Hugo Giraudel):
+*7 different folders for partial Sass files, and 1 main Sass file to import all
+other files into a compiled CSS stylesheet.
+
+*THE 7 FOLDERS:
+1# base/
+2# components/
+3# layout/
+4# pages/
+5# themes/
+6# abstracts/
+7# vendors/
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+IMPLEMENTING BEM IN THE NATOURS PROJECT
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+INTORDUCTION TO SASS AND NPM
+----------------------------
+WHAT IS SASS AND HOW DOES IT WORK?
+*SASS: Sass is a CSS preprocessor, an extension of CSS that adds power and elegance
+ to the basic language.
+SASS SOURCE CODE------<SASS COMPLIER>--------COMPILED
+
+*Instead of writing a CSS file with regular CSS code, we write SASS code in Sass files.
+Then, we run a complier, and that compiler converts the SASS code we wrote into regular CSS code.
+That's why it's called a CSS preprocessor.
+
+MAIN SASS FEATURES
+------------------
+1# Variables: for reusable values such as colors, font-sizes, spacing, etc.;
+2# Nesting: to nest selectors inside of one another, allowing us to write less code;
+3# Operators: for mathematical operations right inside of CSS;
+4# Partials and imports: to write CSS in different files and importing them all into one single file;
+5# Mixins: to write reusable pieces of CSS code;
+6# Functions: similar to mixins, with the difference that they produce a value that can be used;
+7# Extends: to make different selectors inherit declarations that are common to all of them;
+8# Control directives: for writing complex code using conditionals and loops;
+
+SCSS Syntax:---Sassy CSS
