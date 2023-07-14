@@ -142,7 +142,7 @@ eg.
 String firstName = "John ";
 String lastName = "Doe";
 String fullName = firstName + lastName;
-System.out.println(fullName);
+System.out.println(fullName); 
 
 
 For numeric values:

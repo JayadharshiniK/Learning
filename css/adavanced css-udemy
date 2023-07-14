@@ -500,6 +500,7 @@ IMPLEMENTING BEM IN THE NATOURS PROJECT
 INTORDUCTION TO SASS AND NPM
 ----------------------------
 WHAT IS SASS AND HOW DOES IT WORK?
+SASS- Syntactically awesome stylesheets
 *SASS: Sass is a CSS preprocessor, an extension of CSS that adds power and elegance
  to the basic language.
 SASS SOURCE CODE------<SASS COMPLIER>--------COMPILED
@@ -511,7 +512,13 @@ That's why it's called a CSS preprocessor.
 MAIN SASS FEATURES
 ------------------
 1# Variables: for reusable values such as colors, font-sizes, spacing, etc.;
+*A variable is just like a container where we can some store data, for eg. like the name of a color.
+And then we can reuse it all over our code.
+
 2# Nesting: to nest selectors inside of one another, allowing us to write less code;
+*It's about selecting sub-elements into main elements inside the same bracket itself
+'&'---using the ampersand symbol (it actually write the selector path up until this point)
+
 3# Operators: for mathematical operations right inside of CSS;
 4# Partials and imports: to write CSS in different files and importing them all into one single file;
 5# Mixins: to write reusable pieces of CSS code;
@@ -519,4 +526,18 @@ MAIN SASS FEATURES
 7# Extends: to make different selectors inherit declarations that are common to all of them;
 8# Control directives: for writing complex code using conditionals and loops;
 
+*There are two kinds of syntax for SASS:
+SASS--without brackets and colons, follows only the indentation
+SCSS--with colon marks and brackets----THE MOSTLY USED ONES!
+
 SCSS Syntax:---Sassy CSS
+RESOURCE: BRACKET PAIR COLORIZER!----to give each set of braces their own unique color
+* For SCSS we can write the comments using //--only
+
+*tip# when we apply float property to our inline-block elements, then the background
+color disappears, that's because all of the child elements of the parent container are
+floating and so the element collapses and it loses all its height. To solve this, we can use
+the clearfix method. We usually created a class called a clearfix and then added it
+to the element.
+
+*DRY Principle: DON'T REPEAT YOURSELF!--Meaning the code
