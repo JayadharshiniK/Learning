@@ -541,3 +541,97 @@ the clearfix method. We usually created a class called a clearfix and then added
 to the element.
 
 *DRY Principle: DON'T REPEAT YOURSELF!--Meaning the code
+
+Functions:
+@function divide ($a, $b) {
+ @return $a / $b;
+}
+
+Extends:
+@extend %btn-placeholder;
+
+Mixins vs extends:
+In mixins , the code get copied to the mentioned selector;
+In  extends, the selector gets copied to the mentioned extend code
+--------------------------------------------------------------------------------
+A BRIEF INTORDUCTION TO  THE COMMAND LINE
+-----------------------------------------
+cd---current directory or changes the current directory
+dir---displays a list of directory's files and subdirectories
+cd.. ---moves back to the the home folder
+click tab to auto complete a relevant folder name
+mkdir---make directory for creating a new folder
+type nul 'file name'---creates files inside a folder
+cls---for clearing the CMD screen
+del---deleting the files(permanently deletes the file)
+up-arrow---shows previously written COMMAND
+down-arrow---to show recently written COMMAND
+--------------------------------------------------------------------------------
+
+A BRIEF INTRODUCTION TO NPM AND THE NODE ECOSYSTEM
+--------------------------------------------------
+
+Node JS:-It is an open source that allow developers to write and run JavaScript
+applications on the server. Developers started using node.js to also write tools
+top help them with local web development.
+
+NPM: NPM(Node package manager) is a simple command line interface that allows
+developers to install and manage packages on their local computers. There are all
+kinds of open-source tools, libraries and frameworks needed for modern
+development. Modern web development could simply not exist without a package manager.
+
+Steps to install Sass on local computer:-
+-----------------------------------------
+1. Install the package from net to local computer
+2. Open command prompt
+3. Go to folder c----"cd c:"
+4. Write---"node -v" and then enter
+5. CHECK FOR THE NODE JS VERSION INSTALLED;
+v20.4.0
+
+6.Then navigate to the project folder, so that we can start using NPM right now
+//this is to create a package called package.json file which basically will contain
+the definitions of our project and where NPM will write the packages.
+
+7. In the line of project folder opened, run simply "npm init" on the command lines
+// NPM in it will open this program here (With many description given)
+//It is a simple helper which will create the package.json file in the project folder
+
+8. Press enter to name it and also can give description(optional)
+9. Press enter for "is it ok (yes)"
+
+***now the file got added in our project file
+
+//FINALLY INSTALL SASS COMPILER:---
+10. Write--"npm install node-sass --save-dev" and press enter
+//you can view the "devDependencies" along with the installed version of Sass in the package.json file
+// dev dependencies---tool for development
+
+**That's it we are ready to write and compile SASS
+----------------------****-------------------------------------------------------
+///////* write again npm install jquery --save
+//for installing jquery functions to in our project (if needed later)
+
+
+Now you can see a folder named node modules, containing a lot of files for the packages to run
+
+//we don't need to share the node modules file, as we can get it from package.json file
+//-- to get the node modules file for a project,
+in command prompt, write "npm install" and then press enter
+---------------------------------------------------------------------------------
+NPM Scripts:
+
+//npm init   //It creates initial project
+npm install  //It reads package.json file and creates node_modules and adds all dependency mentioned in packages.json dependecies
+npm add <PackagaName>    Eg.  npm add bootstrap
+npm remove <Packagename>  Eg.  npm remove bootstrap
+
+// edit your script as:
+"node-sass sass/main.scss css/style.css -w"
+to watch all your changes across the scss file
+then run your npm to get the changes done live
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+NATOURS PROJECT-USING ADVANCED CSS AND SASS;
+--------------------------------------------
+CONVERTING OUR CSS CODE TO SASS: VARIABLES AND NESTING
