@@ -522,6 +522,7 @@ And then we can reuse it all over our code.
 3# Operators: for mathematical operations right inside of CSS;
 4# Partials and imports: to write CSS in different files and importing them all into one single file;
 5# Mixins: to write reusable pieces of CSS code;
+//when you want to apply the same set of styles to different tags or blocks
 6# Functions: similar to mixins, with the difference that they produce a value that can be used;
 7# Extends: to make different selectors inherit declarations that are common to all of them;
 8# Control directives: for writing complex code using conditionals and loops;
@@ -553,6 +554,13 @@ Extends:
 Mixins vs extends:
 In mixins , the code get copied to the mentioned selector;
 In  extends, the selector gets copied to the mentioned extend code
+
+Mixins vs functions:
+@mixin, very similar to a function but the main difference between the two is that
+mixins output lines of Sass code that will compile directly into CSS styles,
+while functions return a value that can then become the value for a CSS property
+or become something that might be passed to another function or mixin.
+
 --------------------------------------------------------------------------------
 A BRIEF INTORDUCTION TO  THE COMMAND LINE
 -----------------------------------------
@@ -635,3 +643,193 @@ then run your npm to get the changes done live
 NATOURS PROJECT-USING ADVANCED CSS AND SASS;
 --------------------------------------------
 CONVERTING OUR CSS CODE TO SASS: VARIABLES AND NESTING
+Making changes over the css code as sass code with functions, and nesting the elements
+with their similar group.
+
+IMPLEMENTING THE 7-1 CSS ARCHITECTURE WITH SASS;
+-----------------------------------------------
+*7-1 Pattern-- where we create seven folders and one main SASS file to import all
+the files that are in these folders.
+
+Step 1:-start with creating base folders: 'base' folder--inside sass folders
+*inside base folder, create a file "base SASS file"--This file will be for the real low
+level basics, such as resets and styles for html and body element selectors. This must
+be a partial file for easy import options.
+//A partial file --they always start with an underscore
+
+*create the base folder as
+"_base.scss"
+"_amimations.scss"
+"_typography.scss"
+"_utilities.scss"
+
+*This type of architecture is designed to handle large multi-page websites or web apps.
+
+Step 2:-Create another folder named: "abstracts" in the sass file to store mixins, functions and variables;
+Under that create:
+"_functions"
+"_mixins"
+"_variables"
+
+Step 3:-Create another folder "components"
+//components are our resusable building blocks that make up our websites or apps;
+they are completely independent and held together by the layout of the page;
+
+Step 4:-Create a "layout" folder
+// A layout folder for each piece of the global layout of the entire project;
+
+Step 5:- Create a folder named "pages"
+//in that we can create a new file for that specific page
+//eg. homepage
+
+**Another two folders are-- themes (for web app with different themes)
+- vendor folder--where we can put third party css (eg, the scss file of the boot strap or an icon system or an animation framework)
+
+Step 6:- Separate the written code so far into the created files.
+--------------------------------------------------------------------------------
+
+REVEIW: RESPONSIVE DESIGN PROINCIPLES AND LAYOUT TYPES
+------------------------------------------------------
+
+4 BASIC RESPONSIVE DESIGN PRINCIPLES
+------------------------------------
+*Responsive web design is essentially a technique that we can use to make a webpage,
+adjust its layout, and its visual style to any possible screen size.
+*It makes the website usable on all possible kinds of devices.
+
+1. FLUID LAYOUTS
+2. RESPONSIVE UNITS
+3. FLEXIBLE IMAGES
+4. MEDIA QUERIES
+
+1. FLUID LAYOUTS:
+* To allow webpage to adapt to the current viewport width (or even height);
+*Use % (or vh/vw) unit instead of px elements that should adapt to viewport (usually layout)
+*Use max-width instead of width;
+
+*In CSS, there are currently three major ways of laying out a webpage or web application
+1# FLOAT LAYOUTS:-
+The old way of building layouts of all sizes, using the float CSS property. Still used, but getting outdated
+
+2# FLEXBOX:-
+Modern way of laying out elements in a 1-dimensional row without using floats;
+Perfect for component layouts.
+
+3# CSS GRID:- For laying out element in a fully-fledged 2-dimensional grid.
+Perfect for page layouts and complex components.
+
+//Why we use a float layout in this project?
+*The most focus of this project is on using modern CSS properties and techniques:
+clips, transforms, animations, background video, etc
+*Even though flexbox and CSS grid are more modern, every web developer should still
+know how float layouts work;
+*As a professional developer, your job will include working with older CSS codebases,
+which will contain float layouts
+
+2. RESPONSIVE UNITS:
+*Use rem unit instead of px for most lengths
+*To make it easy to scale the entire layout down(or up) automatically
+
+3. FLEXIBLE IMAGES:
+*By default, images don't scale automatically as we change the viewport, so we
+need to fix that
+*Always use % for image dimensions, together with the max-width property
+
+4. MEDIA QUERIES:
+To change CSS styles on certain viewport widths (called breakpoints)
+--------------------------------------------------------------------------------
+BUILD A CUSTOM GRID WITH FLOATS:
+--------------------------------
+// how to architect and build a simple grid system;
+//how the attribute selector works;
+//how the :not pseudo-class works;
+//how calc() works, and what's the difference between calc() and simple Sass operations.
+
+GRID:- A grid is just a design system which allows us to build consistent interfaces.
+This kind of grid allow us to divide our available space in required equal parts.
+
+tip# : One of the standards used these days, is to make a 1140 pixels grid.
+tip# : "margin : 0 auto;"---used to center block elements at any specified width;
+tip# : The not pseudoclass selects all the things except the mentioned
+tip# : calc()--allows us to do mathematical operations with mixed units
+
+**attribute selector: The [attribute|="value"] selector is used to select elements with the specified attribute,
+whose value can be exactly the specified value, or the specified value followed by a hyphen (-).
+
+tip#: ^ -this symbol would select the class which is similar to the property mentioned
+*-select any class which contain the part mentioned
+$- select any class that ends with the mentioned property
+
+tip#: <!-- = for opening the comment column
+      --> = for closing the comment area
+
+Layout grid html#:-
+
+<section class="grid-test">
+        <div class="row">
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+            <div class="col-1-of-2">
+                Col 1 of 2
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-3">
+                Col 1 of 3
+            </div>
+            <div class="col-2-of-3">
+                Col 2 of 3
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-2-of-4">
+                Col 2 of 4
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-1-of-4">
+                Col 1 of 4
+            </div>
+            <div class="col-3-of-4">
+                Col 3 of 4
+            </div>
+        </div>
+
+    </section>

@@ -1,0 +1,53 @@
+Install Nodejs
+Create a git repository for JavaScript
+Clone it to local folders through command line
+Open it in VS code
+Type the code
+Run the code using command: 'node .\variablesEg.js'
+--------------------------------------------------------------------------------
+******JavaScript******
+--------------------------------------------------------------------------------
+What is JavaScript?
+
+*JavaScript is a dynamic, weakly typed programming language which is compiled at
+ runtime. It can be executed as part of a webpage in a browser or directly on any
+ machine (host environment);
+ //Dynamic, Interpreted programming language:
+ **Not pre-compiled, instead parsed and compiled "on the fly" (eg. in the browser)
+ **Code evaluated and executed at runtime
+ **Code can change at runtime (eg. type of a variable)
+// Weakly typed programming language:
+** Data types are assumed (eg. assigned to variables) automatically
+**You don't define that some variable has to hold a certain value (eg.a number)
+** Data types are not set in stone but can change
+
+*Interpreted, "on the fly" compiled language
+//How is JavaScript executed?
+--when your code want it to have some effect on the web page (i.e. to run the JavaScript code),
+we need a JavaScript engine (it's built into the browser)
+eg. V8-(CHROME)
+SpiderMonkey-(Firefox)
+--JavaScript Engine=>> Parse code--> Compile to machine code-->Execute Machine code-->Effect on webpage
+
+*"Hosted language": Runs in different environments (eg. in browser)
+*Most prominent use-case: Run code in a browser (on a webpage)
+
+ How do web pages work?
+
+ *You are the user visiting a web page
+ *Visit and interact with your machine where the browser installed on it
+ *You click on a URL- (initial visit)Request is sent on to the server(where the webpage or html file is stored)
+ *The server then ,loads the web page and sends it back to your browser as a 'response'
+ //JavaScript simply makes this process more interactive
+
+ Dynamic webpages?
+*JavaScript helps to load information on the same web page like pop-up windows &
+menus instead of sending another html request for a new page.
+
+JavaScript runs on a host environment
+-------------------------------------
+**Browser-side:
+=>JavaScript can manipulate the HTML code, CSS, send background Http requests & much more
+=>It cannot access the local filesystem, interact with the operating system, etc.
+
+**Other eg. Server-side

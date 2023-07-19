@@ -1,0 +1,49 @@
+#7. Leafy Trail
+--------------
+<div class="yel-leaf"></div>
+<div class="lg-leaf"></div>
+<div class="dg-leaf"></div>
+
+<style>
+  body {
+    background-color: #0B2429;
+    position: relative;
+  }
+
+  .yel-leaf {
+    width: 151px;
+    height: 151px;
+    background: #F3AC3C;
+    border-top-left-radius: 66%;
+    border-bottom-right-radius: 70%;
+    position: absolute;
+    top: 68px;
+    left: 165px;
+    z-index:1
+  }
+
+   .lg-leaf {
+    width: 151px;
+    height: 151px;
+    background: #998235;
+    border-top-left-radius: 66%;
+    border-bottom-right-radius: 65%;
+    position: absolute;
+    top: 68px;
+    left: 118px;
+    z-index:0
+  }
+
+   .dg-leaf {
+    width: 151px;
+    height: 151px;
+    background: #1A4341;
+    border-top-left-radius: 66%;
+    border-bottom-right-radius: 66%;
+    position: absolute;
+    top: 68px;
+    left: 68px;
+    z-index:-1
+  }
+
+</style>
