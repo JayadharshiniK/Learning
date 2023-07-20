@@ -19,6 +19,11 @@ R: clippy-css clip path maker
 
 4. The easiest way to center anything with the transform, top and left properties
 
+//create a text-box class and style the elements: use position: absolute; top 50% and left 50%
+//then translate the box to the required length (translate: -50%, -50%)---
+**this will make to move 50% in of the box's height in opp. of x and y directions respectively
+//it nicely gets adapted to any screen sizes
+
 adding logo and text to the header
 alt tag(attribute tag)--for seo optimation &
                       --if the image fails to load there then the text appears for the user
@@ -30,7 +35,7 @@ text-entrance animations
 
 to fix shaky
 backface-visibility: hidden;----determines the hiding of the back part of the
-elements also helps to fix the shaky part of the element while animation
+elements; also helps to fix the shaky part of the element while animation
 
 tip4: ctrl+d=selects the multiple element of same property
 
@@ -833,3 +838,154 @@ Layout grid html#:-
         </div>
 
     </section>
+
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+
+BUILDING THE ABOUT SECTION-PART 1
+---------------------------------
+/Thinking about components;
+/How and why to use utility classes;
+/How to use the background-clip property;
+/How to transform multiple properties simultaneously;
+/How to use the outline-offset property together with outline;
+/How to style elements that are not hovered while others are.
+
+*Follow THINK-BUILD-ARCHITECT MINDSET
+
+tip#: To take the section up, use negative margin
+tip#: to get the background clipped to the required space, use '-webkit-background-clip: text;'
+tip#: text-shadow: X Y Blur length rgba($color: #000000, $alpha: .2);
+
+tip#: Utility classes: They are very simple classes in CSS, with one simple text
+eg. "u-center-text"
+//add the styles in utilities file created already
+
+tip#: When you don't want to give the margin (or any property), to the code which is to be reused all over the page,
+then go for a utility;
+
+tip#: When you don't want the last one to be not applied for property; then use":
+&:not(:last-child) {
+    margin-bottom: 3rem;
+    }
+
+tip#: If it really a small unit, then we can write it in px units itself
+tip#: To get img classes, use emmet shorthand (using BEM):
+.className>(img.className__element.className--element)*x
+//x is the number of times we want the code to be written;
+ eg.
+code: .composition>(img.composition__photo.composition__photo--p1)*3
+output:
+<div class="composition">
+                    <img src="../img/nat-1-large.jpg" alt="Photo 1" class="composition__photo composition__photo--p1">
+                    <img src="../img/nat-2-large.jpg" alt="Photo 2" class="composition__photo composition__photo--p2">
+                    <img src="../img/nat-3-large.jpg" alt="Photo 3" class="composition__photo composition__photo--p3">
+                </div>
+
+
+ tip#: To get the position one top of another, use absolute positioning;
+
+ tip#: To get a collage model of images placed, use the following code in composition sass file:
+
+ .composition {
+    position: relative;
+
+    &__photo {
+        width: 55%;
+        box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: .4);
+        border-radius: 2px;
+        position: absolute;
+
+
+        &--p1{
+            left: 0;
+            top: -2rem;
+        }
+
+        &--p2{
+            right: 0;
+            top: 2rem;
+        }
+
+        &--p3{
+            left: 20%;
+            top: 10rem;
+        }
+    }
+}
+
+tip#: To get flexible images, define the width of images in percentages, to get nicely to screen sizes;
+tip#: To get a outside border, use outline property & give an outline-offset;
+
+tip#: To select the not hovered nested class:
+&:hover &__photo:not(:hover) {
+        transform: scale(.95);
+    }
+tip#: To get a cooler animation effect over zoom use:
+transform: translateY(-.5rem)
+
+================================================================================
+BUILDING THE FEATURES SECTION
+-----------------------------
+/How to include and use an icon font;
+/Another way of creating the "skewed section" design;
+/How and when to use the direct child selector
+
+To get icon fonts:-
+1# R: linea.io
+2# Download the required set of files
+3# Copy it to our project css folder
+4# Include it in the HTML before the main style link:
+"<link rel="stylesheet" href="css/icon-font.css">"
+
+To to include the icons:
+1# Create a class for it in the html
+2# Copy the class name as:
+<i class=icon-basic-world"></i> ---> i = icons
+
+To create 4 columns with a feature box with them:
+
+Code: ".row>.col-1-of-4>.feature-box"
+
+Output: <div class="row">
+            <div class="col-1-of-4">
+                <div class="feature box"></div>
+            </div>
+        </div>
+
+tip#: To get card type boxes, use feature-box inside a the main column as a separate element
+tip#: alpha is for opacity---
+eg. .8 alpha= 80% of the image and 20% of the bg image
+
+tip#: best for box shadows:
+box-shadow: 0 1.5rem 4rem rgba($color: #000000, $alpha: .15);
+
+tip#: Trick for making different shapes for the container:
+SIMPLY SKEW THE ENTIRE SECTION
+**skew the content box of the skewed section in the opposite direction to make it right.
+
+tip# :To only select the direct child(it only selects the first child and not the heirs of it*), use:
+scss--> & > *
+css--> .section-features *
+
+================================================================================
+BUILDING THE TOURS SECTION -PART1
+---------------------------------
+/How to build an amazing, rotating card;
+/How to use perspective in CSS;
+/How to use the backface-visibility property;
+/Using background blend modes;
+/How and when to use box-decoration-break;
+
+Building the cards:
+*Turning card: Rotating 180 deg. across the y-axis
+*Give particular hover effects on particular cards or components
+
+tip#: To get a user centered movement, give a perspective property:
+ perspective: 150rem;
+ **put a larger value of rem so that the perspective is perfect and not to enlarged!
+**The front is initally at 0 deg rotation and 180 deg at hovered;
+**The back is initally rotated to 180deg, and reaches 0 deg. at hovered;
+
+*//*backface-visibility: hidden;----determines the hiding of the back part of the
+elements
