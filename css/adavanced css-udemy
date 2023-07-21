@@ -12,7 +12,7 @@ Write a basic reset for the webpage in css code before starting
 tip1: box sizing:---borders and paddings are no longer added to the total width or total height
 tip2: add the font family in body part for a good practice
 
-95vh----everytime the height must be 955 of the viewport height
+95vh----everytime the height must be 95% of the viewport height
 linear-gradient----to make gradients across the screen
 R: clippy-css clip path maker
 
@@ -989,3 +989,54 @@ tip#: To get a user centered movement, give a perspective property:
 
 *//*backface-visibility: hidden;----determines the hiding of the back part of the
 elements
+
+**we can apply more amazing effects on background image, instead of normal image tag;
+//&nbsp;--->non-breaking space
+
+//background-blend mode property describes how the elements, background images, should blend;
+//when there is to blend multiple backgrounds, then use this background-blend property;
+//there are different options for the property
+//this is a new property, so it does not work with older browsers;
+
+eg. background-blend-mode: screen;
+
+tip#: To fix the overlapping background image to the container:
+under the border radius property, use:
+overflow: hidden;
+
+tip#: To get a polygon-clip:
+clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+//to work across all the browsers:
+-webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+
+tip#: Box decoration break
+**The box-decoration-break property specifies how the background, padding, border,
+border-image, box-shadow, margin, and clip-path of an element is applied when the
+box for the element is fragmented.
+
+tip#: To bring the blocked element to center, use:
+margin: 0 auto;
+=> top and bottom: 0
+=> right and left: automatically calculated by the browser
+
+DESIGNING THE BACK PART:
+tip3: to create a simple link pointing to nowhere, :
+a.btn----> <a href="" class="btn"></a>
+================================================================================
+
+BUILDING THE STORIES SECTION - PART 1
+-------------------------------------
+/How to make text flow around shapes with shape-outside and float;
+/How to apply a filter to images;
+/How to create a background video covering an entire section;
+/How to use <video> HTML element;
+/How and when to use the object-fit property;
+
+tip#: Use figure tag:
+The <figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
+<figure>
+  <img src="img_pulpit.jpg" alt="The Pulpit Rock" width="304" height="228">
+</figure>
+
+Tip#: To align the text according to the shape given, use the shape outside property;
