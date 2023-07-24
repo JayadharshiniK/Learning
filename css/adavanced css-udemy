@@ -1040,3 +1040,112 @@ The <figure> tag specifies self-contained content, like illustrations, diagrams,
 </figure>
 
 Tip#: To align the text according to the shape given, use the shape outside property;
+
+// Defining a circle:
+(Radius[50%] at 50% 50%);-----50% 50%--The exact horizontal and vertical center.
+
+//The best way to move with the element that is floated is to use transform, instead of margins;
+
+// For flexible width, they always need a width,
+the width=> width/height: 100%; //---100% of the parent's width i.e. 15rem
+
+// To select the direct child=>
+& > *;
+
+//We can't apply two transform properties at the same time;
+//Special HTML elements for captions for figures: "figcaptions"
+
+//Simple code to bring things to the exact center:
+position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%)
+
+//  &:hover &__caption {
+
+    }
+==>The change happens on the story caption when the story is hovered.
+tip#: When there are animation or translate glitches happen, the backface visibility can fix that most of the time;
+
+//The is amazing filter properties on css to make the effects
+eg.
+ filter: blur(3px) brightness(80%);
+--> more the px, more the blur value
+--> more the percentage than 100%, then more brighter the image is;
+
+PART-3 ADDING A BACKGROUND VIDEO;
+--------------------------------
+* Add an element to this section and make it the exact same size as the section;
+*Put the video in that container
+
+//The source tag in the html, which allow us to write to embed a video file into this vidoe element:
+<source src="img/video.mp4" type="video/mp4">
+<source src="img/video.webm" type="video/webm">
+
+RESOURCE: "coverr"--for downloading videos!
+
+//--> autoplay, muted, loop are some commands given to the video tag!
+
+//object-fit: cover;----> The element will fill the entire parent while still maintaining the parent ratio;
+and the content that does not cover the parent dimension will be simply clipped off!
+
+--------------------**********************************--------------------------
+BUILDING THE BOOKING SECTION - PART 1:
+
+/How to implement "solid-color gradients";
+/How the general and adjacent sibling selectors work and why we need them;
+/How to use the ::input-placeholder pseudo-element;
+/How and when to use the :focus, :invalid, placeholder-shown and : checked pseudo-classes;
+/Techniques to build custom radio buttons;
+
+Q:How the section gets the height and width:
+**it gets the height due to the padding given and the internal element placed and their height property;
+**We create a row, because we want to center that box nicely in the middle;
+
+tip#: background-size: cover =100%
+// To get a solid gradient with a background:
+
+linear-gradient(105deg, rgba($color-white, .9) 0%, rgba($color-white, .9) 50%, transparent 50%),
+                    url(../../img/nat-10.jpg);
+
+*&::-webkit-input-placeholder---for pseudo-elements; only works in safari and chrome
+
+//sibling-selector:  Helps to select the adjacent siblings (the sibling that comes immediately after the selected element);
+eg. &__input:placeholder-shown + &__label {
+
+   }
+
+// input and the next to next element (i.e. general sibling selector: ~)
+
+//      opacity: 0;
+        visibility: hidden;
+**we cannot simply use visibility 'none' and as we cannot animate the visibility;
+
+Q: How to add a animated input field with translated label:
+&__label {
+        font-size: 1.2rem;
+        font-weight: 700;
+        margin-left: 2rem;
+        margin-top: .7rem;
+        display: block;
+        transition: all .3s;
+    }
+
+    //written nothing in the input box, the label needs to be hidden;
+
+    &__input:placeholder-shown + &__label {
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(-4rem)
+    }
+
+BUILD CUSTOM RADIO BUTTONS:
+**In order that HTML consider the two input as a group, we need to give the same name attribute!
+name="size"
+
+**Create a span element inside the label for styling purpose;
+//we cannot style the radio button in CSS directly
+
+**Hide the input button, but it will still be working as it is been connected to the label already;
+
+**
