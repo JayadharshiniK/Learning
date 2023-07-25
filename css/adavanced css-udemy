@@ -1147,5 +1147,119 @@ name="size"
 //we cannot style the radio button in CSS directly
 
 **Hide the input button, but it will still be working as it is been connected to the label already;
+tip3: When describing the pseudo-element, always use display property and its content property;
 
-**
+**First create a custom button, also using the after-pseudoclass element.
+
+**Make the input radio circle invisble; by setting its opacity to zero:
+//Bring the custom button adjacent to the original radio button;
+
+** Use the pseudoclass checked for radio buttons;
+
+**Select the custom btn label instead of original btn, by using :
+&__radio-input:checked ~ &__radio-label &__radio-button::after {}
+
+//this replaces the functionality of the original radio button to our custom made button;
+//after pseudo-element adds like a virtual element right after the element that we're selecting;
+//to make the after-pseudo element to appear on the screen, it is necessary to :
+specify its content property and its display ;
+//after-pseudo-btn is treated as the child of the btn;
+
+
+tip3: simple code: button.btn.btn--green
+output: <button class="btn btn--green"></button>
+In the form element, we want a button element and just not a anchor link,
+as we need to submit the form using that button;
+
+**Use the following property to all the buttons using:
+//Change for the <button> element
+    border: none;
+    cursor: pointer;
+-----------------------***************------------------------------------------
+BUILDING THE FOOTER;
+/How to design a simple website FOOTER
+
+Q: How all the sections gets margin on right and left automatically:
+The styling is mentioned in the body section;
+
+Steps to build the footer:
+** Use 1-of-2 columns
+**Place the logo, list and copyright text according to the design in separate divs
+-------------------------*****************--------------------------------------
+BUILDING THE NAVIGATION
+//What the "checkbox hack" is and how it works;
+//How to create custom animation timing functions using cubic bezier curves;
+//How to animate "solid-color gradients";
+//How and why to use transform-origin;
+
+Main parts of the navigation:
+1. the floating button with menu icon
+2. the background coming and expanding;
+3. overall container occupying the full page;
+4. unordered list containing navigation elements with link on each of them;
+5. converted icon over clicked;
+
+'Checkbox hack':
+step1: To first have a checkbox (which will be hidden later);
+step2: Have a label connected to that checkbox (which is where we click);
+step3: To reveal the entire navigation there in the background;
+//using checked pseudoclass element in CSS;
+
+
+tip#: radial-gradient($color-primary-light, $color-primary-dark);
+lighter color to darker! gradient starts from the center;
+
+
+//design the background (radial gradient)
+//design the button(original viewed button covering the backgrnd btn)
+//design the full nav page
+
+ tip#: to give the numbering space, use the span element with:
+ span {
+        margin-right: 1rem;
+        display: inline-block;
+}
+
+//we use the checkbox hack to bring back the hidden elements;
+
+//We hit the label and the checkbox becomes checked;
+and then we want the navigation background here to become visible;
+
+//custom based-transition function:
+cubic-bezeir curve
+R: cubic-bezeir.com
+easings.net
+eg...
+transition: transform 0.8s cubic-bezier(0.86, 0, 0.17, 1);
+
+Creating a hamburger menu! converted into the cross icon;
+Tip#: To create small lines, use span element
+tip#: The middle line will be the span element and
+the top will be before psuedo-element and the below one will be after psuedo-element;
+
+1. create a span element
+2. give a class for that span element;
+3. set their properties as below:
+&__icon {
+        position: relative;
+        &,
+        &::before,
+        &::after {
+            width: 3rem;
+            height: 2px;
+            background-color: $color-grey-dark-3;
+            display: inline-block;
+        }
+
+        &::before,
+        &::after {
+         content: "";
+         position: absolute;
+         left: 0;
+        }
+
+        &::before { top: -.8rem; }
+        &::after { top: .8rem;}
+    }
+
+4. to make it a center, then set its text align property to center on the navigation button(its parent class);
