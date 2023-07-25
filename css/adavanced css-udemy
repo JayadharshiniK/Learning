@@ -1263,3 +1263,21 @@ the top will be before psuedo-element and the below one will be after psuedo-ele
     }
 
 4. to make it a center, then set its text align property to center on the navigation button(its parent class);
+
+//&__checkbox:checked + &__button &__icon ==> when the checkbox is checked,
+then the icon of button category is selected
+
+//Why the code is not working when cross design applied with transform(rotate):
+1. move them to the middle
+
+-----------------------------***************------------------------------------
+BUILDING A PURE CSS-POPUP
+-------------------------
+/how to build a nice pop-up with only css;
+/how to use the: target pseudo-class;
+/how to create boxes with equal height using "display: table-cell;"
+/how to create CSS columns text columns;
+/how to automatically hyphenate words using hyphens;
+
+//how to create two boxes side by side with same height:==> using display: table;
+tip#: &ndash; ==> long dash
