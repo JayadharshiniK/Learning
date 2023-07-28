@@ -1031,7 +1031,7 @@ BUILDING THE STORIES SECTION - PART 1
 /How to apply a filter to images;
 /How to create a background video covering an entire section;
 /How to use <video> HTML element;
-/How and when to use the object-fit property;
+/How and when to use the object-fit property;-----this property is similar to background-size property (fill/contain/cover/none/scale-down)
 
 tip#: Use figure tag:
 The <figure> tag specifies self-contained content, like illustrations, diagrams, photos, code listings, etc.
@@ -1046,7 +1046,7 @@ Tip#: To align the text according to the shape given, use the shape outside prop
 
 //The best way to move with the element that is floated is to use transform, instead of margins;
 
-// For flexible width, they always need a width,
+// For flexible image, they always need a width,
 the width=> width/height: 100%; //---100% of the parent's width i.e. 15rem
 
 // To select the direct child=>
@@ -1281,3 +1281,206 @@ BUILDING A PURE CSS-POPUP
 
 //how to create two boxes side by side with same height:==> using display: table;
 tip#: &ndash; ==> long dash
+
+//to create column layout in text, use:
+column-count: 2;
+column-gap: 4rem;
+
+//to get auto hyphenation:
+hyphens: auto;
+=> gives a responsive text layout in all size media;
+
+//Functionality of the popup
+-> Give the popup class an id. (eg. id="popup")
+-> Mention the declared id in the required anchor tag
+-> In style for popup, set opacity=1 and visibility=none;
+-> Select the &:target {}- to select the function of the anchor tag, and set opacity=1 & visibility=visible;
+
+//as soon as we click, it gets added to the web url of the page, so #popup becomes the target!
+
+// How to give the closing action for the popup:
+-> Add anchor tag including cross mark (&times;) in html;
+-> Give the link as the id for the previous page or the page needed to navigate
+eg.
+<a href="#section-tours" class="popup__close">&times;</a>;
+-> Then style the popup__close class as:
+&__close {
+        &:link,
+        &:visited {
+            color: $color-grey-dark;
+            position: absolute;
+            top: 2.5rem;
+            right: 3.5rem;
+            font-size: 4rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all .2s;
+        }
+
+        &:hover {
+            color: $color-primary;
+            transform: scale(1.2);
+        }
+    }
+
+// To get a zooming effect as like coming out towards the user when it is clicked:
+--> we need to set properties for the state of when the target is hit and the styling needs to be for:
+&:target &__content {
+
+   }
+
+-> The initial stage of the content must be scaled down and invisible.
+*here transform scale cannot be use as we can only have one transform in each declaration block.
+To make it work two transform at the same time, we can put the transform properties in the same line
+
+-> Add some transition effect with a delay, eg.:
+transition: all .5s .2s;-------in the initial content stage
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+NATOURS PROJECT- ADVANCED RESPONSIVE DESIGN
+===========================================
+
+Mobile-first vs desktop-first and breakpoints
+---------------------------------------------
+RESPONSIVE DESIGN STRATEGIES;
+----------------------------
+* In the desktop-first approach, we optimize our interfaces for the large screens,
+ then media queries shrink design to smaller screens;
+
+* In the mobile first-strategy, we start writing CSS for mobile devices: small screen;
+Then, media queries expand design to a large desktop screen;
+This may forces us to reduce websites and apps to the absolute essentials;
+
+MAX-WIDTH AND MIN-width:
+Pixel spectrum:
+0px--------600px----------900px------------1200px-------------infinity
+
+//max-width: Maximum width at which media query still applies
+//media queries-- tools used to overriding specific parts of our CSS
+
+//Media query don't add any importance or specificity to selectors, so code order matters-media queries at the end
+
+MOBILE-FIRST APPROACH:
+
+#PROS:
+*100% optimized for the mobile experience;
+*Reduces websites and apps to the absolute essentials;
+*Results in smaller, faster and more efficient products;
+*Prioritizes content over aesthetic design, which may be desirable
+
+#CONS:
+*The desktop version might feel overly empty and simplistic;
+*More difficult and counterintuitive to develop;
+*Less creative freedom, making it more difficult to create distinctive products;
+*Clients are used to see a desktop version of the site as a prototype;
+*Do you users even use the mobile internet? What is the purpose of your website?
+
+
+SELECTING THE BREAKPOINTS: THE OPTIONS;
+
+BAD: simply using the width of popular devices as the breakpoints.
+//ignoring other users;
+//not future proof at all if there is change in the screen resolution;
+
+GOOD: looking at all the most-used device width on the entire internet grouping them and then pick our breakpoints
+
+PERFECT: ingore the devices all together and only look at your content and your design,
+ i.e include a breakpoint wherever your design starts to look weird and out of place.
+ //pretty difficult
+
+//to select the breakpoints, start with the most used screen size that we can get from an app called StarCount.
+// BREAKPOINTS:
+phones= 0-600px
+tablets= 600-900px
+landscape tablets= 900-1200px
+desktop =1200 ONWARDS
+
+THE POWER OF SASS MIXINS TO WRITE MEDIA QUERIES
+-----------------------------------------------
+/How to use a powerful Sass mixing to write all our media queries;
+/How to use the @content and @if Sass directives;
+/ Taking advantages of Chrome DevTools for responsive design.
+
+Adding the media query into each of our selector:
+**Write a mixin for the media queries---"the best solution"
+
+//content directive: This allows us to parse a block of code into a mixin
+
+Building up one huge mixin to cover all the properties:
+@mixin respond($breakpoint) {
+
+}
+
+//if directive: if statement basically makes a test and if the result of this test is true, then something happens!
+
+Write a media query manager to the responsive design:
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 600px) { @content };
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 900px) { @content };
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 1200px) { @content };
+    }
+    @if $breakpoint == big-desktop {
+        @media (max-width: 1800px) { @content };
+    }
+}
+
+Change the pixel units to relative units:
+//ems and rems in media queries, they are not affected by a root font-size setting;
+//so use ems and not rems, as rems fail to work as intented in some of the browsers;
+//ems are the best options for media queries
+
+@mixin respond($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 37.5em) { @content };  -----600px
+    }
+    @if $breakpoint == tab-port {
+        @media (max-width: 56.25em) { @content };  -------900px
+    }
+    @if $breakpoint == tab-land {
+        @media (max-width: 75em) { @content };   ---------1200px
+    }
+    @if $breakpoint == big-desktop {
+        @media (min-width: 112.5em) { @content };  ---------1800px
+    }
+}
+
+//write the media queries in _base.scss in a decreasing order of screen size as to get the last property to be mentioned.
+
+//When it is the mobile-first design, then we use min-width media queries and the order will be ascending order of screen size.
+
+COMMENTS FOR MEDIA QUERY:
+
+_base.scss:
+1rem = 8px, 8/16 =50%
+1rem = 9px, 9/16 = 56.25%
+1rem = 12px, 12/16 = 75%
+
+WRITING MEDIA QUERIES - BASE, TYPOGRAPHY AND LAYOUT
+---------------------------------------------------
+ORDER: Base + Typography > general layout + grid > page layout > components
+
+How to include media query mixins in the required place:
+
+@include respond(tab-port) {
+      padding: 0;
+   }
+
+List of changes made:
+Overall change in the font size in body part
+1. No padding before 900px
+2. Low font size before 900px
+3. Grid --100% width before 900px
+4. Columns are changed as rows, so give them a margin bottom at below 900px
+5. Set the total width of the row to be 50rem at below 900px
+6. Change the clip path value from 75 to 85 for a slight reduced slope!
+7. Change the position of nav-cion as well as the nav-bg-icon--more closer to the margin
+8. Center align the logo, and set width=100% to the text, in footer;
+9. Set a padding for the row as it covers the full width
+9. Reduce the margin bottom for the logo
+10. Reduce the padding for all sections from _home.scss
+11.
