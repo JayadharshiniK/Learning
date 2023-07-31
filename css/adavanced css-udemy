@@ -1478,9 +1478,87 @@ Overall change in the font size in body part
 4. Columns are changed as rows, so give them a margin bottom at below 900px
 5. Set the total width of the row to be 50rem at below 900px
 6. Change the clip path value from 75 to 85 for a slight reduced slope!
-7. Change the position of nav-cion as well as the nav-bg-icon--more closer to the margin
+7. Change the position of nav-icon as well as the nav-bg-icon--more closer to the margin
 8. Center align the logo, and set width=100% to the text, in footer;
 9. Set a padding for the row as it covers the full width
-9. Reduce the margin bottom for the logo
-10. Reduce the padding for all sections from _home.scss
-11.
+9. Reduce the margin bottom for the logo in the footer
+10. Reduce the padding for all sections from _home.scss by the function @include
+//media queries for layout, about, and features sections
+11. Reduce the margin-bottom-big and small from the utility classes
+12. Making changes in the components section:
+**make the photos float and make its position relative;
+**make top of all the sub classes =>0 and for the last child => left=0
+**They get all get aligned in one line
+**Make the center one slight bigger
+//fixing tours, stories and book section RESPONSIVE
+13. Making the changes in the tour cards
+(no hover effect on touch devices, so adding the price and button below the card itself;):
+**include the media query code at last
+**copy the all existing card code to the "@include"
+**And further alter what and all not needed!
+14. Add padding for the cta
+15. **remove corner Radius
+** entire element should have a white background
+** whole element must have a box-shadow
+16. Change the padding for the below attached card;
+17. Change the font-size of the price details
+//Stories section:
+16. Make the story shape as square by removing the skew from the img, img shape and the container
+//Book section:
+**Fix the color-gradient and width of the for to be 65% at (tab-land)
+**Fix image as background-cover and not as background-size:100 => as it only fits 100% in the x-directions
+**Remove the transparent part and make it 100% gradient length as white;
+**Change the margin bottom and 100 width for the radio-group;
+
+App for testing in real devices, mockup: Sizzy
+------------------------------*******-------------------------------------------
+Responsive images:----> Web performance
+The goal of responsive is to serve the right image to the right screen and device, in order to avoid
+downloading unnecessary large images on smaller screens.
+eg. suitable size for devices for an image:
+desktop: 1MB
+phone: 200KB
+
+//When to use responsive images?--> 3 use cases:
+1. RESOLUTION SWITCHING: Decreasing image resolution on smaller screen
+2. DENSITY SWITCHING: Half the image resolution on @1x screen (high resolution screens are called 2x screens)
+**PIXEL DENSITY:- is the amount of pixels found in an inch or a centimeter
+**high density pictures use 2px of the normal image for the one pixel of the normal px
+3. ART DIRECTION: Different image on smaller screen; Image details were preserved but the image is different
+
+RESPONSIVE IMAGES IN HTML - ART DIRECTION AND DENSITY SWITCHING
+//How to use the srcset attribute on the <img> and <source> elements, together with density description
+//How and why to use the <picture> element for art direction;
+//How to write media queries in HTML;
+
+IMG IN HTML :all the img tags where we specify the src
+IMG IN CSS: Where we use the background image styling :
+eg. background-image: url("img_tree.gif"), url("paper.gif");
+
+Density switching:
+eg.---->add srcset and 1x and 2x to the image files;
+<img srcset="../img/logo-green-1x.png 1x, ../img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
+
+**This srcset attribute allows the browser to choose the best of these two images
+according to the screen that is used by the user to display the webpage.
+
+Art direction:
+// Add the css media query--> we want the art direction to happen in the breakpoint what we specified.
+// So if we the screen resolution is higher that we have mentioned, then the second one will be used.
+<picture class="footer__logo">
+<source srcset="../img/logo-green-1x.png 1x, ../img/logo-green-2x.png 2x" media"(max-width: 37.5em)">
+<img srcset="../img/logo-green-x.png 1x, ../img/logo-green-2x.png 2x" alt="Full logo" class="footer__logo">
+</picture>
+
+Resolution Switching:
+//We allow the browser to choose the best image for the current view port and pixel density situation;
+//Using width descriptors---300w, 1000w;
+
+<img srcset="img/nat-1.jpg 300w, img/nat-1-large.jpg 1000w"
+     sizes="(max-width: 900px) 20vw, (max-width: 600px) 30vw, 300px">
+     alt="photo 1"
+     class="composition__photo composition__photo--p1"
+     src="img/nat-1-large.jpg">
+     ------atlast, even if the browsers don't get the path for the image, it can use the src tag to find it;
+
+How to implement responsive images in css:
