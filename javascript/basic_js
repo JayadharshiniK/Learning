@@ -22,11 +22,13 @@ What is JavaScript?
 ** Data types are not set in stone but can change
 
 *Interpreted, "on the fly" compiled language
+
 //How is JavaScript executed?
 --when your code want it to have some effect on the web page (i.e. to run the JavaScript code),
 we need a JavaScript engine (it's built into the browser)
 eg. V8-(CHROME)
 SpiderMonkey-(Firefox)
+
 --JavaScript Engine=>> Parse code--> Compile to machine code-->Execute Machine code-->Effect on webpage
 
 *"Hosted language": Runs in different environments (eg. in browser)
@@ -51,3 +53,52 @@ JavaScript runs on a host environment
 =>It cannot access the local filesystem, interact with the operating system, etc.
 
 **Other eg. Server-side
+--------------------------------------------------------------------------------
+--------------------------------------------------------------------------------
+JavaScript Introduction:
+
+Role of JS on website:
+HTML:- Structure
+CSS:- Styling
+JS:- Functionality (Dynamic update, controlling multi-media, animations)
+
+What it is so popular:
+*Easy to learn
+*Standardized by ECMA International
+*Biggest Community on stack over follow
+*Can be use in both Frontend and backend
+*Good PERFORMANCE
+*Lots of frameworks (angular js)
+
+================================================================================
+
+JavaScript:-- w3 schools
+
+JavaScript today: Web/ Mobile apps; Real-time networking applications; command-line tools and games
+
+EMCA Script: Specification
+JavaScript: Programming language
+
+Setup:
+1. Include: <script></script> at the bottom of the body part--best practice
+
+**Statement: Is a piece of code that expresses an action to be carried out
+
+Change HTML Content
+document.getElementById("demo").innerHTML = "Hello JavaScript";
+
+1. <!DOCTYPE html>
+<html>
+<body>
+
+<h2>What Can JavaScript Do?</h2>
+
+<p id="demo">JavaScript can change HTML content.</p>
+
+<button type="button" onclick='document.getElementById("demo").innerHTML = "Hello JavaScript!"'>Click Me!</button>
+
+</body>
+</html>
+
+--------------------------------------------------------------------------------
+JavaScript- Telukso
