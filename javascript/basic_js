@@ -307,4 +307,4 @@ In arrow functions, we don't need to mention the curly braces, if there is only 
 AADING A FUNTION TO AN OBJECT:
 -----------------------------
 
-"This" keyword:-
+"This" keyword
