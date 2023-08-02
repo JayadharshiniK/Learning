@@ -225,10 +225,86 @@ console.log(`The addition of ${num1} and ${num2} is ${result}`)
 
 
 LOOPS:
+use ; for the inline declaration without the variable.
 ** Initialization
 ** Condition testing
 ** Increment
 
 #while:--check the condition and then go for the output
 #do-while:-- Do it and then check for the condition
-#for while:--
+#for while:-- inline :
+for(initialExpression; condition; step) {
+  console.log
+
+Which loop to use & when?
+//when we know the starting and ending point ==> "For loop"
+eg. all the number till divisible by 3
+
+//when you don't know the number of digits present in the given variable or
+ know the required number of digits and you know the condition when to stop;----"while loop"
+
+ OBJECTS: Objects are variables too. But objects can contain many values.
+ Object literal:
+ //key : value
+
+ eg. const person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+ eg. const person = {
+  firstName: "John",
+  lastName: "Doe",
+  age: 50,
+  eyeColor: "blue"
+};
+
+To get a single value/keyword from the object:
+console.log(alien.name);--dot operator
+
+console.log(alien['name']);
+--square bracket operator (have to be used for the class name with two words)
+eg. console.log(alien['work exp']);
+
+
+COMPLEX OBJECTS:
+---------------
+??-Nullish coalescing opertor is denoted as (??) Double question mark
+
+//objects;
+//nested objects;
+//deleting the property;
+//how to use ? ;
+
+//for in loop:
+**key is used for fetching values in an object
+**for (let key in emply) {
+    console.log(key);
+}
+
+**console.log(key, emply[key]);----for fetching key and its value;
+
+FUNCTIONS:
+----------
+//defining a function
+//calling a function
+
+//return: When a return statement is used in a function body, the execution of the function is stopped.
+--Assigning a own value and then giving the value to the place where they are being used.
+
+Function expression:
+Expression is a thing which gets evaluated and get assigned to a variable
+//parameters:- is the one given to the bracket of Function
+//augument:- is the one which is given in the brackets of the called result (function) statement;
+
+//LOCAL VARIABLE: created inside a function
+//GLOBAL VARIABLE: created outside a function, basically in the code
+
+//default value for the variable:
+num3=1; --- it only works when the value is not assigned to the variable;
+
+ARROW FUNCTIONS:
+---------------
+In arrow functions, we don't need to mention the curly braces, if there is only one function assigned;
+
+AADING A FUNTION TO AN OBJECT:
+-----------------------------
+
+"This" keyword:-
