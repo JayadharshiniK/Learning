@@ -200,7 +200,7 @@ num--  => the decrease from itself -1
 the string will be converted into a numbers
 = --assignment Operators
 == -- comparing
-=== -> Strict equality Operators (compares both the data and the tpye)
+=== -> Strict equality Operators (compares both the data and the type)
 
 opertors:
 and && -- both given conditions needed to be true, to get true
@@ -306,5 +306,98 @@ In arrow functions, we don't need to mention the curly braces, if there is only 
 
 AADING A FUNTION TO AN OBJECT:
 -----------------------------
-
 "This" keyword
+
+
+ARRAYS:-
+--------
+Syntax:-
+let values = new Array();  or  let values = [];
+Inside array we have any values like strings, numbers, objects & functions;
+
+console.log(nums.length)  --- to find the length of an array
+
+push:-- helps to assign the value to the array;
+
+DIFFERENT TYPES OF DATA IN ARRAY:
+--------------------------------
+Calling a function defined in the array:-
+data[3]();
+
+ARRAY METHODS IN JavaScript:
+---------------------------
+1:- PUSH METHOD:- to add a value to the array at the end; //appends new elements to the end of an array, and returns the new length of the array;
+2:- POP METHOD: to remove the array for the recently added value (one)
+3:- SHIFT METHOD: to push the array from right to left; to remove the first added value
+4:- UNSHIFT: to add a value to the first in the queue;
+5:- SPLICE METHOD: used for breaking down the elements into two parts according to the mentioned index points;
+//(method) Array<number>.splice(start: number, deleteCount: number....items : number[]
+//Elements to insert into the array in place of the deleted elements;
+
+FOR-OF LOOP WITH AN ARRAY IN JAVASCRIPT:
+---------------------------------------
+let nums = [];
+ nums[0] = 5;
+ nums[99] = 9;
+
+ for(let n of nums){
+    console.log(n);
+ }
+
+DESTRUCTURING ARRAY:
+--------------------
+tip#: removing an variable: == add an extra comma; -- to eliminate (in better words)
+
+let[a,b,,d] = numb;
+
+//split- for getting a value from the string;
+
+FOR EACH LOOP:
+--------------
+//5. forEach():- which will give you one by one value;
+
+let number = [42,67,89,69,40,45,26];
+
+number.forEach((n) => {
+console.log(n);
+});
+console.log(number);
+
+
+
+//filtering values:
+
+let list = [76,87,95,45,36,32];
+
+list.filter(n => n%2===0)
+   .forEach( n => {
+   console.log(n);
+});
+**it first filters the values of the array using the given filter statement and then prints them one by one;
+
+MAP (for alteration of values):- It will take a value and then changes the value;
+altering the value--double the value, subtraction or performing some complex operations, saving somewhere;
+eg.
+.map ( n => n*2)
+
+
+SET:
+---
+**it is a collection of unique values;
+**normally is an unordered list;
+**does not have an index value;
+
+code:
+let nums = new Set("bookkeeper");
+console.log(nums);
+
+output:
+Set(6) { 'b', 'o', 'k', 'e', 'p', 'r' }
+
+**has()- method for checking the availability of certain value in the given set:
+eg.
+console.log(nums.has(3));
+
+MAP: A Map holds key-value pairs where the keys can be any datatype;
+
+//You can have values but every values need to have a key
