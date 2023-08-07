@@ -151,7 +151,7 @@ tip#: 1_00_000 for identifying the number easily
 // "\n"--new line print
 // "\t"--a tab
 // "\b"--a backspace
-
+// += -- addition assignment operator
 -> BOOLEAN: true or false;
 
 -> Null:
@@ -399,5 +399,7 @@ eg.
 console.log(nums.has(3));
 
 MAP: A Map holds key-value pairs where the keys can be any datatype;
+
+map.set("Navin", "Sathiya") --set(key: any, value: any)
 
 //You can have values but every values need to have a key

@@ -1,0 +1,39 @@
+JSON:
+
+JavaScript object notation: a lightweight data-interchange format;
+It is easy for humans to read and write;
+It is easy for machines to parse and generate;
+
+//JSON object is written inside curly brackets
+//JSON array is written inside square brackets
+
+//convert json into Java format
+//we represent a list of items in an object, we represent them like array (square bracket)
+
+????how to add key value pair in the JSON object already declared;
+#Method1:-
+albums.map((i) => {
+  i.category = "cinema";
+  return i
+});
+
+#Method2:-
+  albums.map(i=>{i["category"] = "cinema"});
+
+????Add new attribute (element) to JSON object using JavaScript;
+eg.
+let instagram = {
+    user1: "id1",
+    user2: "id2"
+}
+
+let i;
+
+for (i=3; i<=10; i++) {
+    let newUser = "user" + i;
+    let newId = "id" + i;
+    instagram[newUser] = newId;
+}
+console.log(instagram)
+
+??HOW TO INCLUDE ARRAYS IN NEW ADDED VALUE?
