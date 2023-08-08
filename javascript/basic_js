@@ -399,7 +399,28 @@ eg.
 console.log(nums.has(3));
 
 MAP: A Map holds key-value pairs where the keys can be any datatype;
+map is a collection of value and key pairs;
 
 map.set("Navin", "Sathiya") --set(key: any, value: any)
 
 //You can have values but every values need to have a key
+
+RECURSION: A recursive function is a function that calls itself somewhere within the body of the function.
+//stack: --- first the log fn will get executed and then the show () here
+
+//if the function gets called by itself(name;) then, the output will be of a large size;
+// But it get ends by the statement : "Maximum call stack exceeded"
+
+Use case of recursion:
+**JSON;
+**Factorial;
+
+FACTORIAL USING RECURSION:
+
+Factorial:
+5! = 5*4*3*2*1 = 120
+0! = 1
+n! = n * (n-2) * (n-3) * (n-4) ... (n-n)
+   = n * (n-1)!
+
+function(n);
