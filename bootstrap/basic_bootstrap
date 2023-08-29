@@ -1,3 +1,47 @@
 Why to use bootstrap?
 // The main purpose of using bootstrap instead of CSS is to minimize the code lengths and the file size;
-=> Faster and more responsive website without having lengthy code; 
+=> Faster and more responsive website without having lengthy code;
+
+How bootstrap works?
+Bootstrap:- is a collection of different classes of CSS that are coded in a way that does
+not add to the size of the file;
+Limitation:--It offers limited options when it comes to colors;
+
+Latest version:- 5.1x
+
+How to use bootstrap in our project?
+1. use CDN(content delivery network) link: Copy the given link in bootstrap website;
+add this link in the head section:
+<link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+    crossorigin="anonymous">
+
+2. Download:
+**Download the extension file from the website, and mention the path in the link tag under the head tag;
+<link
+    rel="stylesheet"
+    href="bootstrap-5.3.1-dist/css/bootstrap.css"
+    />
+
+BOOTSTRAP BREAKPOINTS:
+https://getbootstrap.com/docs/5.3/layout/breakpoints/;
+
+How to customize properties in bootstrap:
+Use important mark after the properties;
+
+COL PROPERTIES IN BOOTSTRAP:
+Bootstrap's Grid system;
+
+*me- margin-right
+*ms- margin start
+
+--------------------------------------------------------------------------------
+BUILDING RELTIO WEB MOCK UP:-
+
+1. Add css cdn link in the head tag
+2. Add js link at the last in the body tag;
+
+3. Add navbar component from bootstrap; customize accordingly
+4.
