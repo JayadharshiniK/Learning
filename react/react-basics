@@ -1,0 +1,44 @@
+React:
+A open source Javascript library that is used to build User Interface(UI)
+
+Main concepts:
+1. React routers
+2. React Hooks & Custom Hooks
+3. State Management with Redux
+4. Redux Saga
+5. React Localization (i18n)
+6. React Firebase
+7. React Typescript
+8. React GraphQL
+9. Payment Integration
+10. React PWA
+11. Next.js & Remix.js
+
+Library: Library accomplish certain functionality Eg. Registration Forms, Image carousel
+Framework: Framework has all tools built-in. Eg. Next.js, Vue, Remix.js
+
+
+Why REACT JS was created?
+
+
+//MPA: Multipage application, all info in the same page, and it takes time to get loaded
+//SPA: Single-page application, we can achieve a larger page application without getting reloading
+Google created--> Angular JS
+Meta created--> React JS
+
+How React JS was created?
+
+FaxJS:
+Makes the Whole DOM process fast and more efficient
+2013--> React JS
+
+
+//When a web page is loaded, the browser creates a Document Object Model (DOM) of the page
+
+Performance: It will change only the data that is changed. Giving us Performance benefits
+JSX helps to mix HTML & Javascript
+
+With React, we can build:
+Mobile apps--> React Native
+Virtual Reality-->React 360
+Desktop apps--> Electron.js
