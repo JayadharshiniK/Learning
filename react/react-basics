@@ -42,3 +42,27 @@ With React, we can build:
 Mobile apps--> React Native
 Virtual Reality-->React 360
 Desktop apps--> Electron.js
+
+
+Setting up react app:
+1. Open a folder in vs code
+2. Open terminal
+3. Go the created file
+4. Enter the command: "npx create-react-app ."
+5. Happy hacking -- the message to denote install
+6. Files like node-modules, public, json files and gitingore will be created
+
+
+To make the file to run, type on comment line:
+'npm start'
+
+
+Components:
+JSX:-->
+It is a syntax by React JS, which allows you to rendering logic with UI stuff;
+In JSX, we always return a components with UI stuff.
+The return value is the JSX code to render to the DOM tree.
+
+Eg:  <User />  --> Calling the variable
+
+Props:
