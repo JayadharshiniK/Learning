@@ -56,13 +56,249 @@ Setting up react app:
 To make the file to run, type on comment line:
 'npm start'
 
+Pre-requisite:
+Extensions in VS CODE:
+1. Simple React Snippets
+2. ES7+ React/Redux
 
-Components:
+Extensions in Chrome:
+1. React Dev Tools
+
+--------------------------------------------------------------------------------
+Components: They serve the same purpose as JavaScript functions, but work in isolation and return HTML.
 JSX:-->
-It is a syntax by React JS, which allows you to rendering logic with UI stuff;
-In JSX, we always return a components with UI stuff.
-The return value is the JSX code to render to the DOM tree.
+*It is a syntax by React JS, which allows you to rendering logic with UI stuff;
+*In JSX, we always return a components with UI stuff.
+*The return value is the JSX code to render to the DOM tree.
+*JSX allows us to write HTML elements in JavaScript and place them in the DOM without any createElement()  and/or appendChild() methods.
+*JSX converts HTML tags into react elements.
+*Use {} to bring in the JS elements in JSX; we cannot pass boolean values, objects inside the curly braces
 
 Eg:  <User />  --> Calling the variable
 
 Props:
+
+<User name="Pedro" age={21} email="pedro@pedro.com" />
+
+Code:
+function App() {
+  const name = "Craze";
+  return (
+    <div className="App">
+      <h1>{name}</h1>
+      <User name="Pedro" age={21} />
+      <User name="Jessiaca" age={31} />
+      <User name="Perter" age={29} />
+    </div>
+  );
+}
+
+let User = (props) => {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      <h1>{props.age}</h1>
+    </div>
+  )
+}
+
+Ternary Operators, Lists in React & Css in React:
+-------------------------------------------------
+
+Default styling given in App.css:
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+CONDITIONAL RENDERING:
+
+1). if, else statement:
+const age = 15;
+if (age>=18) {
+  console.log("IS AN ADULT");
+}
+if (age>=18) {
+  console.log("IS NOT AN ADULT");
+}
+
+2). Ternary operation:
+age>=18 ? console.log("IS AN ADULT") : console.log("IS NOT AN ADULT")
+
+//GROCERY LIST
+
+function App() {
+
+  function handleNameChange() {
+    const names = ["Earn", "Grow", "Give", "Spend"];
+    const int = Math.floor(Math.random()*4);
+    return names[int]
+  }
+
+  return (
+    <div>
+      <h1>This is the intro</h1>
+      <p>Let's {handleNameChange()} money</p>
+    </div>
+  )
+}
+
+//components and props
+
+function App() {
+  return (
+    <div className="App">
+      <Job salary={90000} position="Senior SDE" company="Amazon" />
+      <Job salary={12000} position="Junior SDE" company="Google" />
+      <Job salary={15000} position="Project Manager" company="Mc Donalds" />
+    </div>
+  );
+}
+
+let Job = (props) => {
+  return (
+    <div>
+      <p>{props.salary}</p>
+      <p>{props.position}</p>
+      <p>{props.company}</p>
+    </div>
+  )
+}
+--------------------------------------------------------------------------------
+REACT_FUNCTIONAL COMPONENTS:
+---------------------------
+CNTRL + ALT + R --- For searching a snippet
+
+rafce --> Create a react arrow function component with ES7 module system
+
+<Header /> --> Denotes a component
+
+Why components?:--> reusability
+--------------------------------------------------------------------------------
+
+React_Applying CSS Styles:
+
+1. Applying Inline Styling:
+const Header = () => {
+    const headerStyle = {backgroundColor: 'blue', color: 'white'}
+  return (
+    <header style={headerStyle}>
+        <h1>
+            To do list
+        </h1>
+    </header>
+  )
+}
+
+--------------------------------------------------------------------------------
+React_Click events:
+
+1. To call a paramter in the JS function, we need to call the anonymous function:
+eg.:
+
+const handleClick2 = (name) => {
+        console.log(`Successfully added! ${name}`);
+     }
+
+  return (
+    <main>
+        <p> Let's {handleNameChange()} </p>
+        <button onClick={() => handleClick2('Jatin')}>Add to list</button>
+    </main>
+
+  )
+
+
+  2. Click events example:
+  function handleNameChange() {
+        const names = ["Earn", "Grow", "Give", "Spend"];
+        const int = Math.floor(Math.random()*4);
+        return names[int]
+      }
+
+    const handleClick = (e) => {
+       console.log(e.target.innerText);
+    }
+
+    const handleClick2 = (name) => {
+        console.log(`Successfully added! ${name}`);
+     }
+
+  return (
+    <main>
+        <p onDoubleClick={() => handleClick2('Bala')}> Let's {handleNameChange()} </p>
+        <button onClick={(e) => handleClick(e)}>Add to list</button>
+    </main>
+
+  )
+}
+--------------------------------------------------------------------------------
+use State Hook:
+**changing the properties of this state of a single component, need not to reload
+the entire page
+**we cannot utilize use state in class COMPONENTS
+**we cannot utilize use state in conditional statements
+
+eg:.
+const [name, setName] = useState( ()=>name());
+==> Calling a function inside another function can reduce the replication of the
+function to be called  --> This helps to reduce the reload rate and can handle
+the site speed and size.
+
+To show the increase and the decrease button:
+
+function incrementFunction() {
+      setCount(count +1)
+    }
+
+    function decrementFunction() {
+        setCount(count -1)
+      }
+
+  return (
+    <main>
+        <p> Let's earn money </p>
+        <button>Add to list</button>
+        <button onClick={decrementFunction}>-</button>
+        <span>{count}</span>
+        <button onClick={incrementFunction}>+</button>
+    </main>
+
+  )
+}
+--------------------------------------------------------------------------------
