@@ -302,3 +302,32 @@ function incrementFunction() {
   )
 }
 --------------------------------------------------------------------------------
+React_lists and keys:
+
+* The map,is used to get the itemns of an array as a list//
+* The filter function is used to separate the values of an array according to the logic written;
+
+** const handleCheck = (id) => {
+  const listItems = items.map((item) => item.id===id ? {...item, checked: !item.checked} : item)
+  setItems(listItems)
+}
+
+..item --> This helps to get all the other values of the array to the new array when
+only one value is changed.
+
+ localStorage.setItem("to_do_list", JSON.stringify (listItems)) ---> To store the changes made in the app
+
+--------------------------------------------------------------------------------
+Props and Prop drilling:
+------------------------
+**
+Header.defaultProps = {
+  title: "To do list"
+}
+---> This helps to display the given property, if the external file fails to
+bring the data.
+
+Prop Drilling: The challenge of passing data and state between components that
+are not directly nested arises, known as “prop drilling”
+
+//Sharing info from one component to another component
