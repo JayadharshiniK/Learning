@@ -331,3 +331,45 @@ Prop Drilling: The challenge of passing data and state between components that
 are not directly nested arises, known as “prop drilling”
 
 //Sharing info from one component to another component
+
+//Usually components are functions, and passing a parameter to it, is called as Props;
+//Prop-Drilling can't be done between each siblings;
+
+//To get the no. of items in the footer;
+
+**Abstraction: Grouping small logic as components; improves readability;
+//Creating components for item list logic;
+
+--------------------------------------------------------------------------------
+CONTROLLED COMPONENT INPUTS:
+----------------------------
+--------------------------------------------------------------------------------
+REACT HOOKS:
+-----------
+
+Basic Hooks:
+1. useState:
+const [count, setCount] = useState("")
+//To manage states. Returns a stateful value and an updater function to update it.
+
+2. useEffect:
+//To manage side-effects like API calls, subscriptions, timers, mutations, and more.
+//Used primarily for making API calls;
+[]---pass an empty array meaning that data should not trigger a use effect call,
+if the website is reloaded, the function runs only once.
+
+3. useContext (redux alternative)
+
+Additional Hooks:
+
+1. useReducer:
+const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
+//A useState alternative to help with complex state management.
+
+2. useCallback
+3. useMemo
+4. useRef:
+
+5. useImperativeHandle
+6. useLayoutEffect
+7. useDebugValue
