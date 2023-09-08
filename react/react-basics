@@ -368,8 +368,38 @@ const [state, dispatch] = useReducer(reducer, { count: 0, showText: true });
 
 2. useCallback
 3. useMemo
-4. useRef:
 
-5. useImperativeHandle
-6. useLayoutEffect
-7. useDebugValue
+4. useRef:
+function RefTutorial() {
+  const inputRef = useRef(null);
+
+  const onClick = () => {
+    inputRef.current.value = "";
+  };
+It returns a ref object with a .current property. The ref object is mutable.
+It is mainly used to access a child component imperatively.
+
+5. useImperativeHandle:
+
+
+6. useLayoutEffect:
+//It is called earlier than the use effect always, in a page rendering..
+//It can be used in cases where you want to change the layout of the application
+before it actually prints out to the user!
+
+
+7. useDebugValue:
+Helps to display a label in React DevTools for custom hooks.
+
+================================================================================
+BUILDING A SIMPLE CALCULATOR:
+
+* To select a the buttons inside a div, :
+.calculator-grid > button {}
+
+*Word-wrap property to get the words have space or broke to the next line;
+
+*states involved in this calculator: --use a reducer inside the react
+1. current-operand
+2. previous-operand
+3. operation

@@ -24,3 +24,15 @@ go to github browser
 2.and go to developer settings and select personal access tokens and select token classic
 3.and generate new token classic and give some name and give no expiration
 4.and select repo and give generate token.
+
+
+Collaborative work in github:
+* To make a change in the main source document, create a sub-branch(feature branch);
+* Make the required changes;
+* Give pull-request to the develop-branch
+* Then, if needed go for 'merge the pull-requests'
+
+//git-branches in the companies:
+develop --- stage --- mainly
+
+//CI/CD -- Continuous Integration/Continuous Deployment
