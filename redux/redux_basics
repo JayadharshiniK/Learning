@@ -1,0 +1,52 @@
+Redux: It is a state management library for JavaScript Apps;
+* Can be used with React, Angular, Vue, Vanilla JS
+
+Why do we need a state management library?
+//Data needed to be synced form one component of the UI to the another;
+Data flow happens from one part of the UI to another and change in;
+
+State management solutions:
+1. Flux (by Facebook)
+2. Redux --simple and elegant
+3. Mobx
+
+//Store:--we store all the application state inside a central repository that is
+single repository that is a single JavaScript object called the store (some kind of
+database for the frontend)
+
+Redux:
+1. Centralizes application's states
+2. Makes data flow transparent and predictable
+
+PROS:
+1. Predictable state changes:- we can easily see what exactly is going on and how
+the application state changes in response to every action.
+2. Centralized state: all the data our application needs is stored in a single
+place that is accessible by all parts of the UI.
+3. Easy Debugging
+4. Cache or preserve page states
+5. Implement Undo/Redo features;
+6. Ecosystem of add-ons
+
+CONS:
+1. Introduces some indirection and complexity in your code:- because redux is based on
+functional programming principles
+2. Verbosity:- We have to write some boilerplate code to get things done
+
+Basic Terms:
+1. Redux: A complex state management tool, with a single store as CDS (central data store)
+
+2. Reducer: Manages the State and returns the newly updated state;
+they are the function which manages the state of the function
+
+3. Actions: this is a part of the reducer function, which is actually the parameter;
+//pure object which is sent or dispatched from the view
+Have 2 type properties type:
+-> unique identifier
+-> payload which has data
+
+4. Dispatch: Dispatch is used to send actions to update the data
+
+Redux environment set-up:
+1. Create a react-app
+2. Install redux packages using:- npm install redux react-redux
