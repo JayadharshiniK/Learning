@@ -41,8 +41,8 @@ they are the function which manages the state of the function
 
 3. Actions: this is a part of the reducer function, which is actually the parameter;
 //pure object which is sent or dispatched from the view
-Have 2 type properties type:
--> unique identifier
+Have 2 type properties:
+-> type unique identifier
 -> payload which has data
 
 4. Dispatch: Dispatch is used to send actions to update the data
@@ -50,3 +50,54 @@ Have 2 type properties type:
 Redux environment set-up:
 1. Create a react-app
 2. Install redux packages using:- npm install redux react-redux
+
+//How to create the store:
+STEP1: import createStore from 'rdeux';
+
+const reducerFn = (state,action) => {
+
+}
+const store = createStore(reducerFn)
+
+STEP2: give access to the store for all the components used in the app through the index.js file
+CODE: import { Provider } from 'react-redux';
+
+STEP3: Add the Provider to cover the <React.StrictMode> --wrap the <Provider> tag to the component
+
+Old Redux:
+1. You have to configure Redux DevTool Extension explicity
+2. We need to manually handle and change the state immutably
+3. Configuring a Redux Store is too complicated
+4. Need to create reducers and creators separately - lots of boilerplate code
+5. Lots of code need to write to handle asynchronous requests and handling error
+code was also manual;
+6. Class Bases implementation
+
+
+New Redux:
+1. It provides automatic support for Redux DevTools Extension.
+2. It provides the support for Immer.js library which automatically changes the
+code immutably
+3. Configuring a Redux store is much easier and built in support of middleware
+4. A createSlice() function that comes in handy to replace create action and create
+Reducer functions with a single function;
+5. createAsyncThunk to make asynchronous requests;
+6. Functional implementation with TypeScript and supports of hooks
+
+
+//Creating Routers:
+1. Install react-router using the following command:
+npm i react-router-dom
+
+2. Import router in the app.js file using following import statement:
+import {createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom';
+
+3. Create a simple Route in the app.js function:
+const router = createBrowserRouter(createRoutesFromElements)(
+    <Route>
+      <Route></Route>
+    </Route>
+  )
+
+
+///Router must be the root components for all the other components in the APP
