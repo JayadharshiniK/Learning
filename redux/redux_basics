@@ -101,3 +101,27 @@ const router = createBrowserRouter(createRoutesFromElements)(
 
 
 ///Router must be the root components for all the other components in the APP
+
+4. Creating a reducer:
+reducers: {
+        add(state, action){
+           state.push(action)
+        }
+    }
+
+5. Updating the store to components; linking them to manage the states;
+
+//React-Redux Hook Explanation:
+*React Redux offers a set of Hooks as an alternative to the existing connect()higher
+order component
+*These hooks allow you to connect to the redux store and dispatch actions without
+having to wrap your components in connect()
+
+useSelector:
+useSelector is equivalent to mapStateToProps()
+It takes in a function argument that returns the part of the state that you want;
+
+useDispatch:
+useDispatch is equivalent to mapDispatchToProps()
+This hook returns a reference to the dispatch function from the Redux store. You
+may use it to dispatch actions as needed
