@@ -51,6 +51,11 @@ Redux environment set-up:
 1. Create a react-app
 2. Install redux packages using:- npm install redux react-redux
 
+three things to install before working with redux:
+1. Redux-toolkit
+2. redux
+3. React-redux
+
 //How to create the store:
 STEP1: import createStore from 'rdeux';
 
