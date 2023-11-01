@@ -403,3 +403,9 @@ BUILDING A SIMPLE CALCULATOR:
 1. current-operand
 2. previous-operand
 3. operation
+
+================================================================================
+To make the Git cloned code to work, we need the node modules to get the required
+data files for the dependencies. Use "npm install" to install the node modules folder.
+
+## Check the port:3000, if not supported, remove the port value.
